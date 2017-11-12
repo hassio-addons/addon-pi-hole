@@ -1,0 +1,33 @@
+#!/bin/bash
+# ==============================================================================
+# Community Hass.io Add-ons: Pi-hole
+# This script patches all service commands into the appropriate s6- commands
+# Why not systemd? Docker said no, so did we ;)
+# ==============================================================================
+
+start() {
+    s6-svc -wU -u -T2500 "/var/run/s6/services/${service}"
+}
+
+stop() {
+    s6-svc -wD -d -T2500 "/var/run/s6/services/${service}"
+}
+
+restart() {
+    stop
+    start
+}
+
+status() {
+    s6-svstat "/var/run/s6/services/${service}"
+}
+
+service="$1"
+command="$2"
+
+if [[ ! -d "/var/run/s6/services/${service}" ]] ; then
+    echo "s6 service not found for ${service}, exiting..."
+    exit
+fi;
+
+${command} "${service}"

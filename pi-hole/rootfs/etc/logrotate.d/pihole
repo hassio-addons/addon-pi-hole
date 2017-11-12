@@ -1,0 +1,21 @@
+/data/log/pihole.log {
+	root root
+	daily
+	copytruncate
+	rotate 5
+	compress
+	delaycompress
+	notifempty
+	nomail
+}
+
+/data/log/pihole-FTL.log {
+	root root
+	weekly
+	copytruncate
+	rotate 3
+	compress
+	delaycompress
+	notifempty
+	nomail
+}

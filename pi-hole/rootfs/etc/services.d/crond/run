@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: Pi-hole
+# Runs the cron daemon
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+exec fdmove -c 2 1 /usr/sbin/crond -f -L /var/log/cron -l 0 -c /etc/crontabs 

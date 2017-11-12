@@ -1,0 +1,1 @@
+/etc/sudoers.d/pihole false root 0440 0440

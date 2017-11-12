@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: Pi-hole
+# Runs the Pi-hole FTL daemon
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+exec s6-setuidgid pihole pihole-FTL no-daemon
