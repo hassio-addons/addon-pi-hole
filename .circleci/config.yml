@@ -55,22 +55,22 @@ jobs:
     <<: *defaults
     environment:
       ARCH: aarch64
-      MICROBADGER_WEBHOOK: hassioaddons/pi-hole-aarch64/-Dsmq0eEcKOq2p99bLUJj19dsxw=
+      MICROBADGER_WEBHOOK: hassioaddons/pi-hole-aarch64/pXRJSw5ETjOPFwiKxRQkDQuZVXY=
   amd64:
     <<: *defaults
     environment:
       ARCH: amd64
-      MICROBADGER_WEBHOOK: hassioaddons/pi-hole-amd64/6y5xU8A6MPYM7MpwC3jx6UUMiII=
+      MICROBADGER_WEBHOOK: hassioaddons/pi-hole-amd64/dW8ZA-Z-HuK9kZJlEdLl5fFrnEw=
   armhf:
     <<: *defaults
     environment:
       ARCH: armhf
-      MICROBADGER_WEBHOOK: hassioaddons/pi-hole-armhf/H4v2thSWt5AJDl2_zNgujH0x_NA=
+      MICROBADGER_WEBHOOK: hassioaddons/pi-hole-armhf/6bdl-V5sP_UANSPGh1Zdn7XOhNA=
   i386:
     <<: *defaults
     environment:
       ARCH: i386
-      MICROBADGER_WEBHOOK: hassioaddons/pi-hole-i386/MhziqAtkr5Xpo9irIKe0qbsF5T8=
+      MICROBADGER_WEBHOOK: hassioaddons/pi-hole-i386/so7sdmmzok409B90kXswRR6NuRA=
 
 workflows:
   version: 2
