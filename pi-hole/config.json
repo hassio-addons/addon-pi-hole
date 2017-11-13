@@ -4,7 +4,7 @@
   "slug": "pi-hole",
   "description": "Network-wide ad blocking using your Hass.io instance",
   "url": "https://github.com/hassio-addons/addon-pi-hole",
-  "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
+  "webui": "[PROTO:ssl]://[HOST]:[PORT:80]/admin/index.php",
   "startup": "system",
   "arch": [
     "aarch64",

@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-There a no unreleased changes yet.
+### Fixed
+
+- incorrect URL in "Open Web UI" button #1
 
 ## [v0.1.0] (2017-11-12)
 
