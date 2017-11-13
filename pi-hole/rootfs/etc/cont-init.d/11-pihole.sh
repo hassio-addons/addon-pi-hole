@@ -73,14 +73,16 @@ if hass.config.true 'ipv6'; then
         ip=$(hass.config.get 'ipv6_address')
     else
         hass.log.debug 'Detecting IPv6 address to use with Pi-hole'
-        ips=($(ip -6 addr show "${interface}" | grep 'scope global' | awk '{print $2}'))
+        ips=($(ip -6 addr show "${interface}" | grep 'scope global' | awk '{print $2}' || true))
 
-        # Determine type of found IPv6 addresses
-        for i in "${ips[@]}"; do
-            result=$(testIPv6 "$i")
-            [[ "${result}" == "ULA" ]] && ip_ula="${i%/*}"
-            [[ "${result}" == "GUA" ]] && ip_gua="${i%/*}"
-        done
+        if [[ ! -z "${ips:-}" ]]; then
+            # Determine type of found IPv6 addresses
+            for i in "${ips[@]}"; do
+                result=$(testIPv6 "$i")
+                [[ "${result}" == "ULA" ]] && ip_ula="${i%/*}"
+                [[ "${result}" == "GUA" ]] && ip_gua="${i%/*}"
+            done
+        fi
 
         # Prefer ULA over GUA or don't use any if none found
         if [[ ! -z "${ip_ula:-}" ]]; then

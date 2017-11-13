@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ### Fixed
 
-- incorrect URL in "Open Web UI" button #1
+- Incorrect URL in "Open Web UI" button #1
+- Addon fails to start when IPv6 is not present on network #3
 
 ## [v0.1.0] (2017-11-12)
 
