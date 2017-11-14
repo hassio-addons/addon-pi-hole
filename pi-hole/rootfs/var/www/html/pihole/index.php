@@ -23,8 +23,15 @@ if (!empty($virtual_host)) {
     $AUTHORIZED_HOSTNAMES[] = $virtual_host;	
 }
 
-$uri = escapeshellcmd($_SERVER['REQUEST_URI']);
-$serverName = escapeshellcmd($_SERVER['HTTP_HOST']);
+$fullUri = sprintf(
+    '%s://%s%s',
+    isset($_SERVER['HTTPS']) ? "https" : "http",
+    $_SERVER['HTTP_HOST'],
+    $_SERVER['REQUEST_URI']
+);
+
+$uri = parse_url($fullUri, PHP_URL_PATH);
+$serverName = parse_url($fullUri, PHP_URL_HOST);
 
 // If the server name is requested, it's likely a user trying to get to the admin panel.
 // Let's be nice and redirect them.
@@ -34,7 +41,7 @@ if(in_array($serverName, $AUTHORIZED_HOSTNAMES)) {
 }
 
 // Retrieve server URI extension (EG: jpg, exe, php)
-ini_set('pcre.recursion_limit',100);
+ini_set('pcre.recursion_limit', 100);
 $uriExt = pathinfo($uri, PATHINFO_EXTENSION);
 
 if(!in_array($uriExt, $webExt) && !empty($uriExt))
@@ -49,11 +56,6 @@ if(!in_array($uriExt, $webExt) && !empty($uriExt))
 	</html>
 	<?php
 	die();
-}
-
-// Don't show the URI if it is the root directory
-if($uri == "/") {
-	$uri = "";
 }
 
 ?>
@@ -76,7 +78,7 @@ if($uri == "/") {
                 Website Blocked
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 88.32 129.93"><defs><style>.cls-1{fill:url(#New_Gradient_Swatch_1);}.cls-2{fill:#980200;}.cls-3{fill:red;}</style><linearGradient id="New_Gradient_Swatch_1" x1="2.71" y1="20.04" x2="69.77" y2="20.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#12b212"/><stop offset="1" stop-color="lime"/></linearGradient></defs><title>NewVortex</title><g id="Layer_2" data-name="Layer 2"><g id="RedBerry"><path id="Leaf_Path" data-name="Leaf Path" class="cls-1" d="M36.56,39.93m0,0C20.34,38.2,4,25.94,2.71,0,27.88,0,41.34,14.9,42.64,38.51c4.76-28.32,27.07-25,27.07-25,1.06,16.05-12.12,25.78-27.07,26.59C38.44,31.25,13.28,9.54,13.28,9.54a.07.07,0,0,0-.11.08S37.45,30.77,36.56,39.93"/><path id="LeftBerry" class="cls-2" d="M44.16,129.93c-1.57-.09-16.22-.65-17.11-17.11-.72-10,7.18-17.37,7.18-27.08C32.44,61.53,0,64.53,0,85.74H0A19.94,19.94,0,0,0,5.83,99.88L30,124.06a19.94,19.94,0,0,0,14.14,5.83"/><path id="BottomBerry" class="cls-3" d="M88.32,85.75c-.09,1.57-.65,16.22-17.11,17.11-10,.72-17.38-7.18-27.08-7.18-24.21,1.79-21.21,34.22,0,34.22h0a19.94,19.94,0,0,0,14.14-5.83L82.46,99.9a19.94,19.94,0,0,0,5.83-14.14"/><path id="RightBerry" class="cls-2" d="M44.16,41.59c1.57.09,16.22.65,17.11,17.11.72,10-7.18,17.37-7.18,27.08,1.79,24.21,34.22,21.21,34.22,0h0a19.94,19.94,0,0,0-5.83-14.14L58.3,47.45a19.94,19.94,0,0,0-14.14-5.83"/><path id="TopBerry" class="cls-3" d="M.08,85.75c.09-1.57.65-16.22,17.11-17.11,10-.72,17.38,7.18,27.08,7.18C68.48,74,65.48,41.6,44.27,41.6h0a19.94,19.94,0,0,0-14.14,5.83L5.94,71.61A19.94,19.94,0,0,0,.11,85.75"/></g></g></svg>
             </h1>
-            <div><?php echo $serverName.$uri; ?></div>
+            <div><?php echo $fullUri; ?></div>
     </header>
     <main>
         <svg 

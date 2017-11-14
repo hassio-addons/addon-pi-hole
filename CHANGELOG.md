@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 - Incorrect URL in "Open Web UI" button #1
 - Addon fails to start when IPv6 is not present on network #3
+- Visiting blocked page with port number does not redirect to admin #2
 
 ## [v0.1.0] (2017-11-12)
 
