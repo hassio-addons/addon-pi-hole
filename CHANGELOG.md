@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## [v0.1.1] (2017-11-14)
+
+[Full Changelog][v0.1.0-v0.1.1]
+
 ### Fixed
 
 - Incorrect URL in "Open Web UI" button #1
@@ -21,4 +27,6 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
 [semantic-versioning]: http://semver.org/spec/v2.0.0.html
+[v0.1.0-v0.1.1]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.1.0...v0.1.1
 [v0.1.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.1.0
+[v0.1.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.1.1
