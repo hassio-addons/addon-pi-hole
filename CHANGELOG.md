@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+### Changed
+
+- Upgraded base image to v1.1.0
+
 ### Fixed
 
 - Not using virtual host #6
@@ -15,6 +19,7 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 ### Removed
 
 - Custom `list.sh`. Now using Pi-holes original version.
+- `services` script, which is now provided by the base image
 
 ## [v0.1.1] (2017-11-14)
 
