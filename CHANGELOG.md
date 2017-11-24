@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## [v0.2.0] (2017-11-24)
+
+[Full Changelog][v0.1.1-v0.2.0]
+
 ### Added
 
 - SSL requirements check on add-on startup
@@ -45,4 +51,6 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 [semantic-versioning]: http://semver.org/spec/v2.0.0.html
 [v0.1.0-v0.1.1]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.1.0...v0.1.1
 [v0.1.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.1.0
+[v0.1.1-v0.2.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.1.1...v0.2.0
 [v0.1.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.1.1
+[v0.2.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.2.0
