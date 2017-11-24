@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 ### Fixed
 
 - Not using virtual host #6
+- Can't remove blacklisted domains #7
 
 ## [v0.1.1] (2017-11-14)
 

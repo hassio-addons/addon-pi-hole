@@ -17,28 +17,29 @@ RUN \
         make \
     \
     && apk add --no-cache \
+        bash \
+        bc \
         bind-tools \
-        wget \
-        libcap \
+        curl \
         dnsmasq-dnssec \
+        git \
+        libcap \
+        libxml2 \
+        logrotate \
         nginx \
+        openssl \
+        perl \
         php7-fpm \
         php7-json \
-        php7-openssl \
         php7-opcache \
-        php7-zip \
+        php7-openssl \
         php7-session \
         php7-sockets \
-        logrotate \
-        libxml2 \
-        bc \
-        bash \
-        curl \
-        perl \
-        sudo \
-        git \
+        php7-zip \
         procps \
-        openssl \
+        sed \
+        sudo \
+        wget \
     \
     && addgroup -S pihole \
     && adduser -S -s /sbin/nologin pihole pihole \
