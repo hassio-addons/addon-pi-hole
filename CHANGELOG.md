@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 - Not using virtual host #6
 - Can't remove blacklisted domains #7
 
+### Removed
+
+- Custom `list.sh`. Now using Pi-holes original version.
+
 ## [v0.1.1] (2017-11-14)
 
 [Full Changelog][v0.1.0-v0.1.1]
