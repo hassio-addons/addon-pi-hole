@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+### Added
+
+- SSL requirements check on add-on startup
+
 ### Changed
 
 - Upgraded base image to v1.1.0
