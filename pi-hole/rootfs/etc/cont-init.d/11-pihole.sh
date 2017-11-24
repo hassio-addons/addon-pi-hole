@@ -105,5 +105,5 @@ fi
 
 if hass.config.has_value 'virtual_host'; then
     hass.log.debug 'Storing virtual host for Pi-hole'
-    hass.config.get 'virtual_host' > /var/run/s6/container_environment/VIRTUAL_HOST
+    hass.config.get 'virtual_host' | tr -d '[:space:]' > /var/run/s6/container_environment/VIRTUAL_HOST
 fi

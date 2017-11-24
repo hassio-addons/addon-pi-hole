@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-No unreleased changes yet.
+### Fixed
+
+- Not using virtual host #6
 
 ## [v0.1.1] (2017-11-14)
 
