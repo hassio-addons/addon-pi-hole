@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## [v0.2.1] (2017-11-29)
+
+[Full Changelog][v0.2.0-v0.2.1]
+
 ### Changed
 
 - Removal of X-Frame-Options header to avoid embedding issues with SSL #10
+- Changed forums link in README
+- Upgraded project stage from "experimental" into "development"
 
 ## [v0.2.0] (2017-11-24)
 
@@ -55,4 +63,6 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 [v0.1.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.1.0
 [v0.1.1-v0.2.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.1.1...v0.2.0
 [v0.1.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.1.1
+[v0.2.0-v0.2.1]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.2.0
+[v0.2.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.2.1
