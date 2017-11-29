@@ -253,7 +253,7 @@ Got questions?
 You have several options to get them answered:
 
 - The Home Assistant [Community Forum][forum], we have a
-  [dedicated topic][forum] on that forum regarding this repository.
+  [dedicated topic][forum] on that forum regarding this add-on.
 - The Home Assistant [Discord Chat Server][discord] for general Home Assistant
   discussions and questions.
 - Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
@@ -340,7 +340,7 @@ SOFTWARE.
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-pi-hole/33817?u=frenck
 [frenck]: https://github.com/frenck
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
 [i386-dockerhub]: https://hub.docker.com/r/hassioaddons/pi-hole-i386
