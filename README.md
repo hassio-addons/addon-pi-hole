@@ -18,11 +18,6 @@
 
 Network-wide ad blocking using your Hass.io instance
 
-## WARNING
-
-This add-on is currently in a **HIGHLY EXPERIMENTAL** state and under
-active development.
-
 ## About
 
 [Pi-hole][pi-hole] is an advertising-aware DNS- and web server, meant to be run
@@ -358,7 +353,7 @@ SOFTWARE.
 [paypal]: https://www.paypal.me/FranckNijhof
 [pi-hole-sensor]: https://home-assistant.io/components/sensor.pi_hole/
 [pi-hole]: https://pi-hole.net/
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-development-yellowgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-pi-hole.svg
 [releases]: https://github.com/hassio-addons/addon-pi-hole/releases
