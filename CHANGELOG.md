@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-No unreleased changes yet.
+### Changed
+
+- Removal of X-Frame-Options header to avoid embedding issues with SSL #10
 
 ## [v0.2.0] (2017-11-24)
 
