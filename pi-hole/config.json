@@ -3,7 +3,7 @@
   "version": "dev",
   "slug": "pi-hole",
   "description": "Network-wide ad blocking using your Hass.io instance",
-  "url": "https://github.com/hassio-addons/addon-pi-hole",
+  "url": "https://community.home-assistant.io/t/community-hass-io-add-on-pi-hole/33817?u=frenck",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:80]/admin/index.php",
   "startup": "system",
   "arch": [
