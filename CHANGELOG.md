@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v0.3.0] (2017-12-03)
+
+[Full Changelog][v0.2.1-v0.3.0]
+
+### Added
+
+- Support for configuring and resolving custom domains #9 #11
+
+### Changed
+
+- Upgrades add-on base image to v1.2.0
+- Updates add-on URLs to new community forum URL
+- Moves copy of rootfs at a later stage
+
 ## [v0.2.1] (2017-11-29)
 
 [Full Changelog][v0.2.0-v0.2.1]
@@ -65,4 +79,6 @@ No unreleased changes yet.
 [v0.1.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.1.1
 [v0.2.0-v0.2.1]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.2.0...v0.2.1
 [v0.2.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.2.0
+[v0.2.1-v0.3.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.2.1...v0.3.0
 [v0.2.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.2.1
+[v0.3.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.3.0
