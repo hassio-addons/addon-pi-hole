@@ -6,9 +6,6 @@ ENV PATH="${PATH}:/opt/pihole" \
     WEB_TAG="v3.1" \
     FTL_TAG="v2.11.1"
 
-# Copy root filesystem
-COPY rootfs /
-
 # Setup base
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -70,6 +67,9 @@ RUN \
     \
     && rm -f -r /root/FTL \
     && apk del --purge .build-dependencies
+
+# Copy root filesystem
+COPY rootfs /
 
 # Build arugments
 ARG BUILD_ARCH
