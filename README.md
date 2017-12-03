@@ -83,7 +83,21 @@ Example add-on configuration:
   "ipv6": true,
   "ipv4_address": "",
   "ipv6_address": "",
-  "virtual_host": "homeassistant.example.com"
+  "virtual_host": "homeassistant.example.com",
+  "hosts": [
+    {
+      "name": "printer.local",
+      "ip": "192.168.1.5"
+    },
+    {
+      "name": "router.local",
+      "ip": "192.168.1.1"
+    },
+    {
+      "name": "router.local",
+      "ip": "FE80:0000:0000:0000:0202:B3FF:FE1E:8329"
+    }
+  ]
 }
 ```
 
@@ -193,6 +207,27 @@ add-on will try to auto-detect the interface to use.
 In case you have an alternative hostname to access Pi-hole (e.g., DuckDNS), you
 can specify it in this option. This improves the handling of the Pi-hole
 blocked website & admin web interface pages.
+
+### Option: `hosts`
+
+This option allows you create your own DNS entries for your LAN. This
+capability can be handy for pointing easy to remember hostnames to an IP
+(e.g., point `printer.local` to the IP address of your printer).
+
+Add a list of hosts you want to add. Some hosts can have both IPv4 and IPv6
+addresses. In that case, simply add the host twice (with both addresses).
+
+See the example above this chapter for a more visual representation.
+
+#### Sub-option: `name`
+
+This option specifies the DNS name of the host you are adding. Its value could
+be a short style hostname like: `printer` or a longer one `printer.local`.
+
+#### Sub-option: `ip`
+
+The IP address this specified host must point to. Its value must be an IPv6 or
+IPv4 IP address.
 
 ## Embedding into Home Assistant
 
