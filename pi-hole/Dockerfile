@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base-amd64:1.1.0
+ARG BUILD_FROM=hassioaddons/base-amd64:1.2.0
 FROM ${BUILD_FROM}
 
 ENV PATH="${PATH}:/opt/pihole" \
