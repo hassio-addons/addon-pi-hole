@@ -240,7 +240,7 @@ Example configuration:
 
 ```yaml
 panel_iframe:
-  terminal:
+  pihole:
     title: Pi-hole
     icon: mdi:block-helper
     url: http://addres.to.your.hass.io/admin/index.php
