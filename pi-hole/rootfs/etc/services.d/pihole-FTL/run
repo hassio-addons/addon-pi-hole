@@ -6,4 +6,8 @@
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
-exec s6-setuidgid pihole pihole-FTL no-daemon
+if hass.debug; then
+    exec s6-setuidgid pihole pihole-FTL debug
+else
+    exec s6-setuidgid pihole pihole-FTL no-daemon
+fi
