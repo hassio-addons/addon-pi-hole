@@ -9,6 +9,25 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v0.4.0] (2017-12-08)
+
+[Full Changelog][v0.3.0-v0.4.0]
+
+### Added
+
+- Added debug mode to Pi-hole FTL
+
+### Changed
+
+- Upgraded Pi-hole core to v3.2 #13
+- Upgraded Pi-hole AdminLTE to v3.2 #13
+- Upgraded Pi-hole FTL to v2.12 #13
+- Fixed typo in panel_iframe example config in the README #16
+
+### Removed
+
+- Removed unused detect_ftl_binary.sh script
+
 ## [v0.3.0] (2017-12-03)
 
 [Full Changelog][v0.2.1-v0.3.0]
@@ -81,4 +100,6 @@ No unreleased changes yet.
 [v0.2.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.2.0
 [v0.2.1-v0.3.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.2.1...v0.3.0
 [v0.2.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.2.1
+[v0.3.0-v0.4.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.3.0
+[v0.4.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.4.0
