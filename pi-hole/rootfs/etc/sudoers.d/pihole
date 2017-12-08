@@ -7,5 +7,5 @@
 # This file is copyright under the latest version of the EUPL.
 # Please see LICENSE file for your rights under this license.
 #
-nginx ALL=NOPASSWD: /usr/local/bin/pihole, /usr/bin/restart_addon
-Defaults secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+nginx ALL=NOPASSWD: /usr/local/bin/pihole, /usr/bin/restart_addon, /usr/bin/stop_addon
+Defaults secure_path = /usr/bin:/sbin:/bin:/usr/sbin:/usr/local/bin

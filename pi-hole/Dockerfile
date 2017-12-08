@@ -2,27 +2,30 @@ ARG BUILD_FROM=hassioaddons/base-amd64:1.2.0
 FROM ${BUILD_FROM}
 
 ENV PATH="${PATH}:/opt/pihole" \
-    CORE_TAG="v3.1.4" \
-    WEB_TAG="v3.1" \
-    FTL_TAG="v2.11.1"
+    CORE_TAG="v3.2" \
+    WEB_TAG="v3.2" \
+    FTL_TAG="v2.12"
 
 # Setup base
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         gcc \
-        musl-dev \
         make \
+        musl-dev \
     \
     && apk add --no-cache \
         bash \
         bc \
         bind-tools \
+        coreutils \
         curl \
         dnsmasq-dnssec \
         git \
+        grep \
         libcap \
         libxml2 \
         logrotate \
+        ncurses \
         nginx \
         openssl \
         perl \
@@ -30,10 +33,12 @@ RUN \
         php7-json \
         php7-opcache \
         php7-openssl \
+        php7-phar \
         php7-session \
         php7-sockets \
-        php7-zip \
+        php7-sqlite3 \
         procps \
+        psmisc \
         sed \
         sudo \
         wget \
@@ -54,6 +59,7 @@ RUN \
     \
     && git clone --branch "${FTL_TAG}" --depth=1 \
         https://github.com/pi-hole/FTL.git /root/FTL \
+    && git -C /root/FTL checkout -b master \
     \
     && cd /root/FTL \
     && make \
@@ -63,6 +69,7 @@ RUN \
     && install -o pihole -Dm755 -d "/opt/pihole" \
     && install -o pihole -Dm755 -t "/opt/pihole" /etc/.pihole/gravity.sh \
     && install -o pihole -Dm755 -t "/opt/pihole" /etc/.pihole/advanced/Scripts/*.sh \
+    && install -o pihole -Dm755 -t "/opt/pihole" /etc/.pihole/advanced/Scripts/COL_TABLE \
     && install -o pihole -Dm755 -t "/usr/local/bin" /etc/.pihole/pihole \
     \
     && rm -f -r /root/FTL \

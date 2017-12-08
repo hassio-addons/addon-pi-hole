@@ -23,6 +23,7 @@ fi
 hass.log.debug 'Symlinking configuration'
 rm -fr /etc/pihole
 ln -s /data/pihole /etc/pihole
+chmod 777 /data/pihole
 
 hass.log.debug 'Setting Pi-hole interface'
 if hass.config.has_value 'interface'; then
@@ -53,16 +54,30 @@ testIPv6() {
     local value1
     local value2
 
+    # first will contain fda2 (ULA)
     first="$(cut -f1 -d":" <<< "${ips}")"
+
+    # value1 will contain 253 which is the decimal value corresponding to 0xfd
     value1=$(((0x$first)/256))
+
+    # Will contain 162 which is the decimal value corresponding to 0xa2
     value2=$(((0x$first)%256))
+
+    # The ULA test is testing for fc00::/7 according to RFC 4193
     if (((value1&254)==252)); then 
         echo "ULA"; 
-    elif (((value1&112)==32)); then
+    fi
+
+    # The GUA test is testing for 2000::/3 according to RFC 4291
+    if (((value1&112)==32)); then
         echo "GUA"
-    elif (((value1==254) && ((value2&192)==128))); then
+    fi
+
+    # The LL test is testing for fe80::/10 according to RFC 4193
+    if (((value1==254) && ((value2&192)==128))); then
         echo "Link-local";
     fi
+
     true
 }
 
@@ -107,3 +122,6 @@ if hass.config.has_value 'virtual_host'; then
     hass.log.debug 'Storing virtual host for Pi-hole'
     hass.config.get 'virtual_host' | tr -d '[:space:]' > /var/run/s6/container_environment/VIRTUAL_HOST
 fi
+
+# Write current version information
+echo -n "${CORE_TAG} ${WEB_TAG} ${FTL_TAG}" > /etc/pihole/localversions
