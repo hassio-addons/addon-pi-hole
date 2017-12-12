@@ -29,6 +29,7 @@ defaults: &defaults
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
                   --image "hassioaddons/pi-hole-{arch}" \
+                  --cache-tag test \
                   --git \
                   --target pi-hole \
                   --${ARCH} \
@@ -40,6 +41,7 @@ defaults: &defaults
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
                   --image "hassioaddons/pi-hole-{arch}" \
+                  --cache-tag test \
                   --git \
                   --target pi-hole \
                   --${ARCH}
