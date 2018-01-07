@@ -132,5 +132,12 @@ if hass.config.has_value 'virtual_host'; then
     hass.config.get 'virtual_host' | tr -d '[:space:]' > /var/run/s6/container_environment/VIRTUAL_HOST
 fi
 
+hass.log.debug 'Setting Pi-hole Query Logging state'
+# shellcheck disable=SC1091
+source /data/pihole/setupVars.conf
+if [[ "${QUERY_LOGGING}" = false ]]; then
+    sed -i 's/^log-queries/#log-queries/' /etc/dnsmasq.d/01-pihole.conf
+fi
+
 # Write current version information
 echo -n "${CORE_TAG} ${WEB_TAG} ${FTL_TAG}" > /etc/pihole/localversions
