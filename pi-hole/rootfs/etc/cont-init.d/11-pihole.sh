@@ -21,11 +21,11 @@ if ! hass.file_exists "${SETUP_VARS}"; then
 fi
 
 # Copy "possible" missing files, due to upgrades
-if ! hass.file.exists '/data/pihole/localbranches'; then
+if ! hass.file_exists '/data/pihole/localbranches'; then
     cp /etc/pihole/localbranches /data/pihole
 fi
 
-if ! hass.file.exists '/data/pihole/GitHubVersions'; then
+if ! hass.file_exists '/data/pihole/GitHubVersions'; then
     cp /etc/pihole/GitHubVersions /data/pihole
 fi
 
