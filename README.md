@@ -74,7 +74,8 @@ Example add-on configuration:
   "log_level": "info",
   "password": "changeme",
   "update_lists_on_start": true,
-  "web_port": 80,
+  "http_port": 80,
+  "https_port": 443,
   "dns_port": 53,
   "ssl": false,
   "certfile": "fullchain.pem",
@@ -144,13 +145,21 @@ while. A scheduled task will take care of that.
 **Note**: _When starting the add-on for the very first time, the lists will be
 updated, regardless of the value of this option._
 
-### Option: `web_port`
+### Option: `http_port`
 
 Changes the port on which the Pi-hole web interface and the blocked page
 will be served from.
 
 **Note**: Port `80` is highly recommended because if you have another service
 using port `80`, then the ads may not transform into blank ads correctly.
+
+### Option: `https_port`
+
+Changes the port on which the Pi-hole web interface and the blocked page
+will be served from (SSL/HTTPS).
+
+**Note**: HTTPS is additional, in cause you'd like to expose the interface to
+the outside world, but still want to service the blocked page on HTTP.
 
 ### Option: `dns_port`
 
