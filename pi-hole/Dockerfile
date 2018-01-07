@@ -2,9 +2,9 @@ ARG BUILD_FROM=hassioaddons/base-amd64:1.3.1
 FROM ${BUILD_FROM}
 
 ENV PATH="${PATH}:/opt/pihole" \
-    CORE_TAG="v3.2" \
-    WEB_TAG="v3.2" \
-    FTL_TAG="v2.12"
+    CORE_TAG="v3.2.1" \
+    WEB_TAG="v3.2.1" \
+    FTL_TAG="v2.13.1"
 
 # Setup base
 RUN \
