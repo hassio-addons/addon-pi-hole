@@ -20,6 +20,15 @@ if ! hass.file_exists "${SETUP_VARS}"; then
     cp /etc/pihole/* /data/pihole
 fi
 
+# Copy "possible" missing files, due to upgrades
+if ! hass.file.exists '/data/pihole/localbranches'; then
+    cp /etc/pihole/localbranches /data/pihole
+fi
+
+if ! hass.file.exists '/data/pihole/GitHubVersions'; then
+    cp /etc/pihole/GitHubVersions /data/pihole
+fi
+
 hass.log.debug 'Symlinking configuration'
 rm -fr /etc/pihole
 ln -s /data/pihole /etc/pihole
