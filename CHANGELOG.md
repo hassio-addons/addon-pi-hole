@@ -9,6 +9,33 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v0.5.0] (2018-01-07)
+
+[Full Changelog][v0.4.0-v0.5.0]
+
+### Added
+
+- Allows for http & https at the same time #18
+
+### Fixed
+
+- Fixes an issue with Pi-hole and FTL versions displayed as N/A #19
+- Typo in container init
+- Fixes the enable/disable/clear functions of the query logs #20
+
+### Changed
+
+- Prevents possible future Docker login issue
+- Pass local CircleCI Docker socket into the build container
+- Use image tagged as test as a cache resource
+- Updated maintenance year, it is 2018
+- Upgrades add-on base image to v1.3.1
+- Upgrades Pi-hole to v3.2.1
+
+### Removed
+
+- Removes Microbadger notification hooks
+
 ## [v0.4.0] (2017-12-08)
 
 [Full Changelog][v0.3.0-v0.4.0]
@@ -102,4 +129,6 @@ No unreleased changes yet.
 [v0.2.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.2.1
 [v0.3.0-v0.4.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.3.0
+[v0.4.0-v0.5.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.4.0
+[v0.5.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.5.0
