@@ -381,7 +381,7 @@ SOFTWARE.
 [issue]: https://github.com/hassio-addons/addon-pi-hole/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-pi-hole.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2017.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
 [patreon-shield]: https://img.shields.io/badge/donate-patreon-blue.svg
 [patreon]: https://www.patreon.com/frenck
 [paypal-shield]: https://img.shields.io/badge/donate-paypal-blue.svg
