@@ -9,6 +9,26 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v1.0.0] (2018-03-18)
+
+[Full Changelog][v0.5.0-v1.0.0]
+
+### Added
+
+- Adds add-on icon
+- Adds note about the static IP requirement
+
+### Fixed
+
+- Fixes Teleporter functionality
+- Fixes persistent custom upstream DNS servers
+
+### Changed
+
+- Upgrades add-on base image to v1.3.3
+- Optimizes add-on logo
+- Upgrades Pi-hole to v3.3
+
 ## [v0.5.0] (2018-01-07)
 
 [Full Changelog][v0.4.0-v0.5.0]
@@ -131,4 +151,6 @@ No unreleased changes yet.
 [v0.3.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.3.0
 [v0.4.0-v0.5.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.4.0...v0.5.0
 [v0.4.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.4.0
+[v0.5.0-v1.0.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.5.0...v1.0.0
 [v0.5.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.5.0
+[v1.0.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v1.0.0
