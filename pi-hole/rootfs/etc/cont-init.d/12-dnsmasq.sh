@@ -12,7 +12,7 @@ declare port
 # Allow dnsmasq to bind on ports < 1024
 setcap CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_NET_RAW=+eip "$(which dnsmasq)"
 
-if ! hass.file_exists '/data/dnsmasq.d'; then
+if ! hass.directory_exists '/data/dnsmasq.d'; then
     hass.log.debug 'Initializing dnsmasq configuration on persistent storage'
     mkdir -p /data/dnsmasq.d
     cp -R /etc/dnsmasq.d/* /data/dnsmasq.d
@@ -35,5 +35,6 @@ sed -i "s/interface=.*/interface=${interface}/" /etc/dnsmasq.d/01-pihole.conf
 
 hass.log.debug 'Setting dnsmasq port'
 port=$(hass.config.get 'dns_port')
+
 hass.log.debug "Setting dnsmasq port to: ${port}"
-echo "port=${port}" >> /etc/dnsmasq.d/99-addon.conf
+sed -i "s/port=.*/port=${port}/" /etc/dnsmasq.d/99-addon.conf
