@@ -33,6 +33,9 @@ Alpine Linux and is using Docker.
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
+**NOTE**: Your Hass.io machine MUST HAVE a static IP for this add-on to function
+properly/fully.
+
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install the "Pi-hole" add-on
 1. Start the "Pi-hole" add-on
