@@ -37,6 +37,8 @@ RUN \
         php7-session \
         php7-sockets \
         php7-sqlite3 \
+        php7-zip \
+        php7-zlib \
         procps \
         psmisc \
         sed \
