@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v1.0.1] (2018-03-22)
+
+[Full Changelog][v1.0.0-v1.0.1]
+
+### Fixes
+
+- Fixes log queries issue on upgrade
+
 ## [v1.0.0] (2018-03-18)
 
 [Full Changelog][v0.5.0-v1.0.0]
@@ -153,4 +161,6 @@ No unreleased changes yet.
 [v0.4.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.4.0
 [v0.5.0-v1.0.0]: https://github.com/hassio-addons/addon-pi-hole/compare/v0.5.0...v1.0.0
 [v0.5.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v0.5.0
+[v1.0.0-v1.0.1]: https://github.com/hassio-addons/addon-pi-hole/compare/v1.0.0...v1.0.1
 [v1.0.0]: https://github.com/hassio-addons/addon-pi-hole/tree/v1.0.0
+[v1.0.1]: https://github.com/hassio-addons/addon-pi-hole/tree/v1.0.1
