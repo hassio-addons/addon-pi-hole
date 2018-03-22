@@ -33,6 +33,9 @@ fi
 hass.log.debug "Setting interface to: ${interface}"
 sed -i "s/interface=.*/interface=${interface}/" /etc/dnsmasq.d/01-pihole.conf
 
+hass.log.debug "Ensure extra information for query log is enabled"
+sed -i "s/log-queri.*/log-queries=extra/" /etc/dnsmasq.d/01-pihole.conf
+
 hass.log.debug 'Setting dnsmasq port'
 port=$(hass.config.get 'dns_port')
 
