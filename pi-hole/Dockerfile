@@ -1,4 +1,5 @@
 ARG BUILD_FROM=hassioaddons/base-amd64:1.3.2
+# hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 ENV PATH="${PATH}:/opt/pihole" \
@@ -7,43 +8,44 @@ ENV PATH="${PATH}:/opt/pihole" \
     FTL_TAG="v3.0"
 
 # Setup base
+# hadolint ignore=DL3003,DL3018
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        gcc \
-        make \
-        musl-dev \
+        gcc=6.4.0-r5 \
+        make=4.2.1-r0 \
+        musl-dev=1.1.18-r3 \
     \
     && apk add --no-cache \
-        bash \
-        bc \
-        bind-tools \
-        coreutils \
-        curl \
-        dnsmasq-dnssec \
-        git \
-        grep \
-        libcap \
-        libxml2 \
-        logrotate \
-        ncurses \
-        nginx \
-        openssl \
-        perl \
-        php7-fpm \
-        php7-json \
-        php7-opcache \
-        php7-openssl \
-        php7-phar \
-        php7-session \
-        php7-sockets \
-        php7-sqlite3 \
-        php7-zip \
-        php7-zlib \
-        procps \
-        psmisc \
-        sed \
-        sudo \
-        wget \
+        bash=4.4.19-r1 \
+        bc=1.07.1-r0 \
+        bind-tools=9.11.2_p1-r0 \
+        coreutils=8.28-r0 \
+        curl=7.59.0-r0 \
+        dnsmasq-dnssec=2.78-r1 \
+        git=2.15.0-r1 \
+        grep=2.15.0-r1 \
+        libcap=2.25-r1 \
+        libxml2=2.9.7-r0 \
+        logrotate=3.13.0-r0 \
+        ncurses=6.0_p20171125-r0 \
+        nginx=1.12.2-r3 \
+        openssl=1.0.2o-r0 \
+        perl=5.26.2-r0 \
+        php7-fpm>7.1.16-r1 \
+        php7-json>7.1.16-r1 \
+        php7-opcache>7.1.16-r1 \
+        php7-openssl>7.1.16-r1 \
+        php7-phar>7.1.16-r1 \
+        php7-session>7.1.16-r1 \
+        php7-sockets>7.1.16-r1 \
+        php7-sqlite3>7.1.16-r1 \
+        php7-zip>7.1.16-r1 \
+        php7-zlib>7.1.16-r1 \
+        procps=3.3.12-r3 \
+        psmisc=23.1-r0 \
+        sed=-4.4-r1 \
+        sudo=1.8.21_p2-r1 \
+        wget=1.19.2-r1 \
     \
     && addgroup -S pihole \
     && adduser -S -s /sbin/nologin pihole pihole \
