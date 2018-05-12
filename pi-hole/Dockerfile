@@ -8,7 +8,7 @@ ENV PATH="${PATH}:/opt/pihole" \
     FTL_TAG="v3.0"
 
 # Setup base
-# hadolint ignore=DL3003,DL3018
+# hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         gcc=6.4.0-r5 \
@@ -31,16 +31,16 @@ RUN \
         nginx=1.12.2-r3 \
         openssl=1.0.2o-r0 \
         perl=5.26.2-r0 \
-        php7-fpm>7.1.16-r1 \
-        php7-json>7.1.16-r1 \
-        php7-opcache>7.1.16-r1 \
-        php7-openssl>7.1.16-r1 \
-        php7-phar>7.1.16-r1 \
-        php7-session>7.1.16-r1 \
-        php7-sockets>7.1.16-r1 \
-        php7-sqlite3>7.1.16-r1 \
-        php7-zip>7.1.16-r1 \
-        php7-zlib>7.1.16-r1 \
+        php7-fpm=7.1.17-r0 \
+        php7-json=7.1.17-r0 \
+        php7-opcache=7.1.17-r0 \
+        php7-openssl=7.1.17-r0 \
+        php7-phar=7.1.17-r0 \
+        php7-session=7.1.17-r0 \
+        php7-sockets=7.1.17-r0 \
+        php7-sqlite3=7.1.17-r0 \
+        php7-zip=7.1.17-r0 \
+        php7-zlib=7.1.17-r0 \
         procps=3.3.12-r3 \
         psmisc=23.1-r0 \
         sed=-4.4-r1 \
