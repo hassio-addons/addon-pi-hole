@@ -43,7 +43,7 @@ RUN \
         php7-zlib=7.1.17-r0 \
         procps=3.3.12-r3 \
         psmisc=23.1-r0 \
-        sed=-4.4-r1 \
+        sed=4.4-r1 \
         sudo=1.8.21_p2-r1 \
         wget=1.19.2-r1 \
     \
