@@ -40,7 +40,6 @@ RUN \
         php7-sockets=7.1.17-r0 \
         php7-sqlite3=7.1.17-r0 \
         php7-zip=7.1.17-r0 \
-        php7-zlib=7.1.17-r0 \
         procps=3.3.12-r3 \
         psmisc=23.1-r0 \
         sed=4.4-r1 \
