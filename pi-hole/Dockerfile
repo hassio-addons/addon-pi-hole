@@ -23,7 +23,7 @@ RUN \
         curl=7.59.0-r0 \
         dnsmasq-dnssec=2.78-r1 \
         git=2.15.0-r1 \
-        grep=2.15.0-r1 \
+        grep=3.1-r0 \
         libcap=2.25-r1 \
         libxml2=2.9.7-r0 \
         logrotate=3.13.0-r0 \
