@@ -1,1 +1,1 @@
-/etc/sudoers.d/pihole false root 0440 0440
+/etc/sudoers.d true root 0640 0750
