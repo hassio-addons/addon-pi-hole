@@ -31,6 +31,7 @@ RUN \
         nginx=1.12.2-r3 \
         openssl=1.0.2o-r0 \
         perl=5.26.2-r0 \
+        php7-fileinfo=7.1.17-r0 \
         php7-fpm=7.1.17-r0 \
         php7-json=7.1.17-r0 \
         php7-opcache=7.1.17-r0 \
