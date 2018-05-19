@@ -246,7 +246,7 @@ IPv4 IP address.
 ## Embedding into Home Assistant
 
 It is possible to embed the Pi-hole admin directly into Home Assistant, allowing
-you to access your terminal through the Home Assistant frontend.
+you to access your Pi-hole admin through the Home Assistant frontend.
 
 Home Assistant provides the `panel_iframe` component, for these purposes.
 
