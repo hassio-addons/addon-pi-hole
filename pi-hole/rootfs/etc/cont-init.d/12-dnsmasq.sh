@@ -32,6 +32,7 @@ else
 fi
 hass.log.debug "Setting interface to: ${interface}"
 sed -i "s/interface=.*/interface=${interface}/" /etc/dnsmasq.d/01-pihole.conf
+sed -i "/except-interface/d" /etc/dnsmasq.d/01-pihole.conf
 
 hass.log.debug "Ensure extra information for query log is enabled"
 sed -i "s/log-queri.*/log-queries=extra/" /etc/dnsmasq.d/01-pihole.conf
