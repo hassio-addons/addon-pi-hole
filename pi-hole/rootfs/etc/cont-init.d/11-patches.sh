@@ -42,5 +42,5 @@ sed -i 's#https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3
 sed -i 's#sudo pihole -a poweroff#nohup bash -c \\"sudo /usr/bin/stop_addon\\" \&> /dev/null </dev/null \&#g' "${base}/scripts/pi-hole/php/savesettings.php"
 sed -i 's#sudo pihole -a reboot#nohup bash -c \\"sudo /usr/bin/restart_addon\\" \&> /dev/null </dev/null \&#g' "${base}/scripts/pi-hole/php/savesettings.php"
 sed -i "s/gethostname()/\"${hostname}\"/g" "${base}/scripts/pi-hole/php/header.php"
-sed -i "s#\"localhost\"#\"localhost\",\"${hostname}\",\"${hostname}\.local\"#g" "${base}/scripts/pi-hole/php/auth.php"
+sed -i "s#\"localhost\"#\"localhost\",\"${hostname}\",\"${hostname}\\.local\"#g" "${base}/scripts/pi-hole/php/auth.php"
 sed -i 's#/etc/pihole/logrotate#/etc/logrotate.d/pihole#g' /opt/pihole/piholeLogFlush.sh

@@ -10,7 +10,7 @@ declare interface
 declare port
 
 # Allow dnsmasq to bind on ports < 1024
-setcap CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_NET_RAW=+eip "$(which dnsmasq)"
+setcap CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_NET_RAW=+eip "$(command -v dnsmasq)"
 
 if ! hass.directory_exists '/data/dnsmasq.d'; then
     hass.log.debug 'Initializing dnsmasq configuration on persistent storage'

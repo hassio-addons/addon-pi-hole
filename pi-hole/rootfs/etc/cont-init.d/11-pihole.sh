@@ -73,8 +73,8 @@ testIPv6() {
     value2=$(((0x$first)%256))
 
     # The ULA test is testing for fc00::/7 according to RFC 4193
-    if (((value1&254)==252)); then 
-        echo "ULA"; 
+    if (((value1&254)==252)); then
+        echo "ULA";
     fi
 
     # The GUA test is testing for 2000::/3 according to RFC 4291
@@ -97,7 +97,7 @@ if hass.config.true 'ipv6'; then
         ip=$(hass.config.get 'ipv6_address')
     else
         hass.log.debug 'Detecting IPv6 address to use with Pi-hole'
-        ips=($(ip -6 addr show "${interface}" | grep 'scope global' | awk '{print $2}' || true))
+        mapfile -t ips < <($(ip -6 addr show "${interface}" | grep 'scope global' | awk '{print $2}' || true))
 
         if [[ ! -z "${ips:-}" ]]; then
             # Determine type of found IPv6 addresses
