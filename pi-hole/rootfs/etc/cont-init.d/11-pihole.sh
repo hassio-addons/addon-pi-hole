@@ -97,7 +97,7 @@ if hass.config.true 'ipv6'; then
         ip=$(hass.config.get 'ipv6_address')
     else
         hass.log.debug 'Detecting IPv6 address to use with Pi-hole'
-        mapfile -t ips < <($(ip -6 addr show "${interface}" | grep 'scope global' | awk '{print $2}' || true))
+        mapfile -t ips < <(ip -6 addr show "${interface}" | grep 'scope global' | awk '{print $2}' || true)
 
         if [[ ! -z "${ips:-}" ]]; then
             # Determine type of found IPv6 addresses
