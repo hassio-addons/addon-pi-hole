@@ -20,7 +20,6 @@ RUN \
         bc=1.07.1-r0 \
         bind-tools=9.11.3-r0 \
         coreutils=8.28-r0 \
-        curl=7.59.0-r0 \
         dnsmasq-dnssec=2.78-r1 \
         git=2.15.0-r1 \
         grep=3.1-r0 \
