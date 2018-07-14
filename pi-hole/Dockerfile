@@ -48,8 +48,6 @@ RUN \
     \
     && addgroup -S pihole \
     && adduser -S -s /sbin/nologin pihole pihole \
-    && addgroup -S dnsmasq \
-    && adduser -S -s /sbin/nologin dnsmasq dnsmasq \
     && addgroup pihole nginx \
     \
     && git clone --branch "${CORE_TAG}" --depth=1 \
