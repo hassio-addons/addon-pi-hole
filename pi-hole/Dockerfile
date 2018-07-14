@@ -21,7 +21,7 @@ RUN \
         bind-tools=9.12.1_p2-r0 \
         coreutils=8.29-r2 \
         dnsmasq-dnssec=2.79-r1 \
-        git=2.15.2-r0 \
+        git=2.18.0-r0 \
         grep=3.1-r0 \
         libcap=2.25-r1 \
         libxml2=2.9.7-r0 \
