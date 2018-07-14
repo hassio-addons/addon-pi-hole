@@ -13,7 +13,7 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         gcc=6.4.0-r8 \
         make=4.2.1-r2 \
-        musl-dev=1.1.18-r3 \
+        musl-dev=1.1.19-r10 \
     \
     && apk add --no-cache \
         bash=4.4.19-r1 \
