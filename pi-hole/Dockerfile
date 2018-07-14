@@ -40,7 +40,7 @@ RUN \
         php7-sockets=7.2.7-r0 \
         php7-sqlite3=7.2.7-r0 \
         php7-zip=7.2.7-r0 \
-        procps=3.3.12-r3 \
+        procps=3.3.15-r0 \
         psmisc=23.1-r0 \
         sed=4.4-r1 \
         sudo=1.8.21_p2-r1 \
