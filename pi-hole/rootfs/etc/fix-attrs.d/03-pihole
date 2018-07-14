@@ -1,1 +1,3 @@
 /usr/bin/pihole-FTL false root 0755 0755
+/data/log/pihole.log false pihole:root 0644 0755
+/data/log/pihole-FTL.log false pihole:root 0644 0755
