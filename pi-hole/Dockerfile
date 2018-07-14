@@ -24,7 +24,7 @@ RUN \
         git=2.18.0-r0 \
         grep=3.1-r2 \
         libcap=2.25-r1 \
-        libxml2=2.9.7-r0 \
+        libxml2=2.9.8-r0 \
         logrotate=3.13.0-r0 \
         ncurses=6.0_p20171125-r0 \
         nginx=1.12.2-r3 \
