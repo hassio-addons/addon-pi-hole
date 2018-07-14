@@ -26,7 +26,7 @@ RUN \
         libcap=2.25-r1 \
         libxml2=2.9.8-r0 \
         logrotate=3.14.0-r0 \
-        ncurses=6.0_p20171125-r0 \
+        ncurses=6.1-r0 \
         nginx=1.12.2-r3 \
         openssl=1.0.2o-r0 \
         perl=5.26.2-r1 \
