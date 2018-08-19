@@ -132,11 +132,12 @@ allowing you to see all DNS requests in the add-on log.
 
 ### Option: `password`
 
-Sets the password to authenticate with the Pi-hole web interface. Leaving it
-empty disables the possibility to authenticate completely.
+Sets the password to authenticate with the Pi-hole web interface.
 
 **Note**: Be aware! Even when you have set a password, some statistics are
 still visible / available.
+
+**Note**: _This option support secrets, e.g., `!secret pihole_password`._
 
 ### Option: `update_lists_on_start`
 
