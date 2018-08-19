@@ -31,7 +31,7 @@ RUN \
         logrotate=3.14.0-r0 \
         ncurses=6.1-r0 \
         nginx=1.14.0-r0 \
-        openssl=1.0.2o-r1 \
+        openssl=1.0.2o-r2 \
         perl=5.26.2-r1 \
         php7-fileinfo=7.2.7-r0 \
         php7-fpm=7.2.7-r0 \
