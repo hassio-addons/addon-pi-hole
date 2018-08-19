@@ -2,6 +2,9 @@ ARG BUILD_FROM=hassioaddons/base:2.1.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 ENV PATH="${PATH}:/opt/pihole" \
     CORE_TAG="v3.3.1" \
     WEB_TAG="v3.3" \
