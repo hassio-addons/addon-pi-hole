@@ -28,7 +28,7 @@
     "http_port": 80,
     "https_port": 443,
     "dns_port": 53,
-    "ssl": false,
+    "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
     "interface": "",
