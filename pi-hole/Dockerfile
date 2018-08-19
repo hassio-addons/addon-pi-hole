@@ -6,9 +6,12 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV PATH="${PATH}:/opt/pihole" \
-    CORE_TAG="v3.3.1" \
-    WEB_TAG="v3.3" \
-    FTL_TAG="v3.0"
+    CORE_TAG="v4.0" \
+    WEB_TAG="v4.0" \
+    FTL_TAG="v4.0"
+
+# We need to copy in the patches need during build
+COPY rootfs/patches /patches
 
 # Setup base
 # hadolint ignore=DL3003
@@ -17,6 +20,10 @@ RUN \
         gcc=6.4.0-r8 \
         make=4.2.1-r2 \
         musl-dev=1.1.19-r10 \
+        libexecinfo-dev=1.1-r0 \
+        linux-headers=4.4.6-r2 \
+        nettle-dev=3.4-r1 \
+        build-base=0.5-r1 \
     \
     && apk add --no-cache \
         bash=4.4.19-r1 \
@@ -66,6 +73,8 @@ RUN \
     && git -C /root/FTL checkout -b master \
     \
     && cd /root/FTL \
+    && patch -p1 < /patches/FTL/fix-poll-h-include-warning-on-musl.patch \
+    && patch -p1 < /patches/FTL/no-backtrace-on-musl.patch \
     && make \
     && mv /root/FTL/pihole-FTL /usr/bin \
     && cd - \
