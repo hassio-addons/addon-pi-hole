@@ -6,13 +6,11 @@
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
-declare http_port
-declare https_port
+declare admin_port
 declare certfile
 declare keyfile
 
-http_port=$(hass.config.get 'http_port')
-https_port=$(hass.config.get 'https_port')
+admin_port=$(hass.config.get 'admin_port')
 
 if hass.config.true 'ssl'; then
     rm /etc/nginx/nginx.conf
@@ -23,11 +21,10 @@ if hass.config.true 'ssl'; then
 
     sed -i "s/%%certfile%%/${certfile}/g" /etc/nginx/nginx.conf
     sed -i "s/%%keyfile%%/${keyfile}/g" /etc/nginx/nginx.conf
-    sed -i "s/%%https_port%%/${https_port}/g" /etc/nginx/nginx.conf
 fi
 
-sed -i "s/%%http_port%%/${http_port}/g" /etc/nginx/nginx.conf
+sed -i "s/%%admin_port%%/${admin_port}/g" /etc/nginx/nginx.conf
 
-if ! hass.config.true 'ipv6'; then 
+if ! hass.config.true 'ipv6'; then
     sed -i '/listen \[::\].*/ d' /etc/nginx/nginx.conf
 fi
