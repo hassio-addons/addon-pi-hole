@@ -11,7 +11,7 @@ mkdir -p /data/log
 if ! hass.file_exists '/data/log/pihole.log'; then
     touch /data/log/pihole.log
     chmod 644 /data/log/pihole.log
-    chown dnsmasq:root /data/log/pihole.log
+    chown pihole:root /data/log/pihole.log
 fi
 
 ln -s /data/log/pihole.log /var/log/pihole.log
