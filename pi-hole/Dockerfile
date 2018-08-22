@@ -82,6 +82,9 @@ RUN \
     && install -o pihole -Dm755 -t "/opt/pihole" /etc/.pihole/gravity.sh \
     && install -o pihole -Dm755 -t "/opt/pihole" /etc/.pihole/advanced/Scripts/*.sh \
     && install -o pihole -Dm755 -t "/opt/pihole" /etc/.pihole/advanced/Scripts/COL_TABLE \
+    \
+    && cd /etc/.pihole/ \
+    && patch -p1 < /patches/pihole/fix-killall-brain-damage.patch \
     && install -o pihole -Dm755 -t "/usr/local/bin" /etc/.pihole/pihole \
     \
     && rm -f -r /root/FTL \
