@@ -81,8 +81,7 @@ Example add-on configuration:
   "log_level": "info",
   "password": "changeme",
   "update_lists_on_start": true,
-  "http_port": 80,
-  "https_port": 443,
+  "admin_port": 4865,
   "dns_port": 53,
   "ssl": false,
   "certfile": "fullchain.pem",
@@ -136,8 +135,8 @@ allowing you to see all DNS requests in the add-on log.
 
 Sets the password to authenticate with the Pi-hole web interface.
 
-**Note**: Be aware! Even when you have set a password, some statistics are
-still visible / available.
+**Note**: _Be aware! Even when you have set a password, some statistics are
+still visible / available._
 
 **Note**: _This option support secrets, e.g., `!secret pihole_password`._
 
@@ -153,21 +152,9 @@ while. A scheduled task will take care of that.
 **Note**: _When starting the add-on for the very first time, the lists will be
 updated, regardless of the value of this option._
 
-### Option: `http_port`
+### Option: `admin_port`
 
-Changes the port on which the Pi-hole web interface and the blocked page
-will be served from.
-
-**Note**: Port `80` is highly recommended because if you have another service
-using port `80`, then the ads may not transform into blank ads correctly.
-
-### Option: `https_port`
-
-Changes the port on which the Pi-hole web interface and the blocked page
-will be served from (SSL/HTTPS).
-
-**Note**: HTTPS is additional, in cause you'd like to expose the interface to
-the outside world, but still want to service the blocked page on HTTP.
+Changes the port on which the Pi-hole web interface will be served from.
 
 ### Option: `dns_port`
 
@@ -178,9 +165,6 @@ have a good reason to change it, leave it to `53`.
 
 Enables/Disables SSL (HTTPS) on the web interface of Pi-hole. Set it `true` to
 enable it, `false` otherwise.
-
-**Note**: Enabling SSL on Pi-hole may have side effects, which may cause ads
-not to transform into blank ads correctly.
 
 ### Option: `certfile`
 
@@ -245,6 +229,23 @@ be a short style hostname like: `printer` or a longer one `printer.local`.
 
 The IP address this specified host must point to. Its value must be an IPv6 or
 IPv4 IP address.
+
+### Option: `i_like_to_be_pwned`
+
+Adding this option to the add-on configuration allows to you bypass the
+HaveIBeenPwned password requirement by setting it to `true`.
+
+**Note**: _We STRONGLY suggest picking a stronger/safer password instead of
+using this option! USE AT YOUR OWN RISK!_
+
+### Option: `leave_front_door_open`
+
+Adding this option to the add-on configuration allows you to disable
+authentication on the admin interface by setting it to `true` and leaving the
+password empty.
+
+**Note**: _We STRONGLY suggest, not to use this, even if this add-on is
+only exposed to your internal network. USE AT YOUR OWN RISK!_
 
 ## Embedding into Home Assistant
 
