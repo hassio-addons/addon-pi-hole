@@ -334,6 +334,17 @@ Want some more functionality to your Hass.io Home Assistant instance?
 We have created multiple add-ons for Hass.io. For a full list, check out
 our [GitHub Repository][repository].
 
+## Trademark legal notice
+
+This add-on is not created, developed, affiliated, supported, maintained
+or endorsed by Pi-hole LLC.
+
+All product names, logos, brands, trademarks and registered trademarks are
+property of their respective owners. All company, product, and service names
+used are for identification purposes only.
+
+Use of these names, logos, trademarks, and brands does not imply endorsement.
+
 ## License
 
 MIT License
