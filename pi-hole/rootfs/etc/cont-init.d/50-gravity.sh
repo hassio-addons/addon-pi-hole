@@ -7,10 +7,11 @@
 source /usr/lib/hassio-addons/base.sh
 
 if hass.config.true 'update_lists_on_start' \
-    || ! hass.file_exists "/data/pihole/gravity.list"; 
+    || ! hass.file_exists "/data/pihole/gravity.list";
 then
     hass.log.debug 'Generating block lists'
-    dnsmasq -7 /etc/dnsmasq.d
+    pihole-FTL &
+    sleep 2
     gravity.sh
-    kill "$(pgrep dnsmasq)"
+    kill -9 "$(pgrep pihole-FTL)" || true
 fi

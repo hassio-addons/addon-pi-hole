@@ -7,6 +7,6 @@
 source /usr/lib/hassio-addons/base.sh
 
 hass.log.debug 'Testing if all configurations valid'
-dnsmasq --test -7 /etc/dnsmasq.d
+pihole-FTL dnsmasq-test -7 /etc/dnsmasq.d
 php-fpm7 -t
 nginx -t
