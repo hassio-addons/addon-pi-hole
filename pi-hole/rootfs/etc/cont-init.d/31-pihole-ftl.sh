@@ -10,7 +10,7 @@ declare interface
 declare port
 
 # Allow dnsmasq to bind on ports < 1024
-setcap CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_NET_RAW=+eip "$(command -v dnsmasq)"
+setcap CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_NET_RAW=+eip "$(command -v pihole-FTL)"
 
 if ! hass.directory_exists '/data/dnsmasq.d'; then
     hass.log.debug 'Initializing dnsmasq configuration on persistent storage'
@@ -42,3 +42,15 @@ port=$(hass.config.get 'dns_port')
 
 hass.log.debug "Setting dnsmasq port to: ${port}"
 sed -i "s/port=.*/port=${port}/" /etc/dnsmasq.d/99-addon.conf
+
+if ! hass.directory_exists '/var/run/pihole'; then
+    mkdir -p /var/run/pihole
+    chmod 775 /var/run/pihole
+    chown pihole /var/run/pihole
+fi
+
+if ! hass.file_exists '/var/run/pihole-FTL.port'; then
+    touch /var/run/pihole-FTL.port
+    chmod 644 /var/run/pihole-FTL.port
+    chown pihole:root /var/run/pihole-FTL.port
+fi
