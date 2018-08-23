@@ -15,3 +15,8 @@ fi
 if ! hass.file_exists '/data/pihole/pihole-FTL.conf'; then
     cp /etc/pihole/pihole-FTL.conf /data/pihole/pihole-FTL.conf
 fi
+
+# Update custom DNS masq setup
+if hass.directory_exists '/data/dnsmasq.d'; then
+    cp /etc/dnsmasq.d/99-addon.conf /data/dnsmasq.d/99-addon.conf
+fi
