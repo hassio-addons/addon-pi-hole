@@ -16,7 +16,8 @@ if ! hass.file_exists '/data/pihole/pihole-FTL.conf'; then
     cp /etc/pihole/pihole-FTL.conf /data/pihole/pihole-FTL.conf
 fi
 
-# Update custom DNS masq setup
-if hass.directory_exists '/data/dnsmasq.d'; then
-    cp /etc/dnsmasq.d/99-addon.conf /data/dnsmasq.d/99-addon.conf
+# Change the user/group running DNSMasq/pihole-FTL
+if hass.file_exists '/data/dnsmasq.d/99-addon.conf'; then
+    sed -i "s/user=.*/user=pihole/" /etc/dnsmasq.d/99-addon.conf
+    sed -i "s/group=.*/group=pihole/" /etc/dnsmasq.d/99-addon.conf
 fi
