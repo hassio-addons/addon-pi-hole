@@ -276,6 +276,11 @@ file:
 # Example configuration.yaml entry
 sensor:
   - platform: pi_hole
+    host: localhost:4865
+    monitored_conditions:
+      - ads_blocked_today
+      - dns_queries_today
+      - unique_clients
 ```
 
 For more information and documentation about configuring this sensor, please
