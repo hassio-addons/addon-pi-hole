@@ -28,3 +28,6 @@ sed -i "s/%%admin_port%%/${admin_port}/g" /etc/nginx/nginx.conf
 if ! hass.config.true 'ipv6'; then
     sed -i '/listen \[::\].*/ d' /etc/nginx/nginx.conf
 fi
+
+# Ensure /admin also works
+ln -sf /var/www/html/admin /var/www/html/admin/admin
