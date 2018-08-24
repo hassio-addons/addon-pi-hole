@@ -14,7 +14,7 @@ if ! hass.file_exists '/data/log/pihole.log'; then
     chown pihole:root /data/log/pihole.log
 fi
 
-ln -s /data/log/pihole.log /var/log/pihole.log
+ln -sf /data/log/pihole.log /var/log/pihole.log
 
 if ! hass.file_exists '/data/log/pihole-FTL.log'; then
     touch /data/log/pihole-FTL.log
@@ -22,4 +22,4 @@ if ! hass.file_exists '/data/log/pihole-FTL.log'; then
     chown pihole:root /data/log/pihole-FTL.log
 fi
 
-ln -s /data/log/pihole-FTL.log /var/log/pihole-FTL.log
+ln -sf /data/log/pihole-FTL.log /var/log/pihole-FTL.log
