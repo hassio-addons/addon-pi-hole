@@ -261,7 +261,7 @@ panel_iframe:
   pihole:
     title: Pi-hole
     icon: mdi:block-helper
-    url: http://addres.to.your.hass.io/admin/index.php
+    url: http://addres.to.your.hass.io:4865
 ```
 
 ## Using the Pi-hole sensor in Home Assistant
