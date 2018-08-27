@@ -18,6 +18,6 @@ fi
 
 # Change the user/group running DNSMasq/pihole-FTL
 if hass.file_exists '/data/dnsmasq.d/99-addon.conf'; then
-    sed -i "s/user=.*/user=pihole/" /etc/dnsmasq.d/99-addon.conf
-    sed -i "s/group=.*/group=pihole/" /etc/dnsmasq.d/99-addon.conf
+    sed -i "s/user=.*/user=pihole/" /data/dnsmasq.d/99-addon.conf
+    sed -i "s/group=.*/group=pihole/" /data/dnsmasq.d/99-addon.conf
 fi
