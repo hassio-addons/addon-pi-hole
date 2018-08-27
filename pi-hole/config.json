@@ -19,6 +19,7 @@
     "NET_ADMIN"
   ],
   "map": [
+    "config",
     "ssl"
   ],
   "options": {
