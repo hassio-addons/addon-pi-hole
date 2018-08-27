@@ -411,8 +411,8 @@ SOFTWARE.
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/community-hass-io-add-on-pi-hole/33817?u=frenck
 [frenck]: https://github.com/frenck
-[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-example/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/hassio-addons/addon-example/pipelines
+[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-pi-hole/badges/master/pipeline.svg
+[gitlabci]: https://gitlab.com/hassio-addons/addon-pi-hole/pipelines
 [i386-anchore-shield]: https://anchore.io/service/badges/image/159ec0dbd53a8e7921340f2019ec50b107b984db5ecd4d0349fb20fb7c689dbc
 [i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fpi-hole-i386%3Alatest
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
