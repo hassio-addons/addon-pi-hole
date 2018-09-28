@@ -15,6 +15,7 @@
   "boot": "auto",
   "host_network": true,
   "hassio_api": true,
+  "hassio_role": "default",
   "privileged": [
     "NET_ADMIN"
   ],
