@@ -37,7 +37,7 @@ RUN \
         logrotate=3.14.0-r0 \
         ncurses=6.1_p20180818-r1 \
         nginx=1.14.1-r0 \
-        openssl=1.0.2p-r0 \
+        openssl=1.0.2q-r0 \
         perl=5.26.2-r1 \
         php7-fileinfo=7.2.10-r0 \
         php7-fpm=7.2.10-r0 \
