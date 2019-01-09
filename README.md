@@ -349,7 +349,7 @@ Use of these names, logos, trademarks, and brands does not imply endorsement.
 
 MIT License
 
-Copyright (c) 2017 Franck Nijhof
+Copyright (c) 2017-2019 Franck Nijhof
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -409,7 +409,7 @@ SOFTWARE.
 [issue]: https://github.com/hassio-addons/addon-pi-hole/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-pi-hole.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2019.svg
 [patreon-shield]: https://www.frenck.nl/images/patreon.png
 [patreon]: https://www.patreon.com/frenck
 [pi-hole-sensor]: https://home-assistant.io/components/sensor.pi_hole/
