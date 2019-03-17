@@ -24,7 +24,6 @@
     "ssl"
   ],
   "options": {
-    "log_level": "info",
     "password": "",
     "update_lists_on_start": false,
     "admin_port": 4865,
@@ -40,7 +39,7 @@
     "hosts": []
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "password": "str",
     "update_lists_on_start": "bool",
     "admin_port": "port",
