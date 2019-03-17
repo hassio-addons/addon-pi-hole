@@ -125,7 +125,7 @@ else
 fi
 
 if bashio::config.has_value 'virtual_host'; then
-    bshio::log.debug 'Storing virtual host for Pi-hole'
+    bashio::log.debug 'Storing virtual host for Pi-hole'
     bashio::config 'virtual_host' | tr -d '[:space:]' > /var/run/s6/container_environment/VIRTUAL_HOST
 fi
 
