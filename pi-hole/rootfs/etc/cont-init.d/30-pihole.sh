@@ -10,6 +10,7 @@ declare ip_gua
 declare ip_ula
 declare ips
 declare result
+declare virtual_host
 
 if ! bashio::fs.file_exists "${SETUP_VARS}"; then
     bashio::log.debug 'Initializing Pi-hole configuration on persistent storage'
@@ -126,7 +127,8 @@ fi
 
 if bashio::config.has_value 'virtual_host'; then
     bashio::log.debug 'Storing virtual host for Pi-hole'
-    bashio::config 'virtual_host' | tr -d '[:space:]' > /var/run/s6/container_environment/VIRTUAL_HOST
+    virtual_host="$(bashio::config 'virtual_host')"
+    echo "${virtual_host}" | tr -d '[:space:]' > /var/run/s6/container_environment/VIRTUAL_HOST
 fi
 
 bashio::log.debug 'Setting Pi-hole Query Logging state'
