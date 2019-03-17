@@ -5,6 +5,7 @@ variables:
   ADDON_GITHUB_REPO: "hassio-addons/addon-pi-hole"
   ADDON_SLUG: "pi-hole"
   ADDON_TARGET: "pi-hole"
+  ADDON_LEGACY_TAGS: "true"
 
   ADDON_AARCH64_BASE: "hassioaddons/base-aarch64:3.0.0"
   ADDON_AMD64_BASE: "hassioaddons/base-amd64:3.0.0"
