@@ -50,9 +50,9 @@ RUN \
         php7-sqlite3=7.2.14-r0 \
         php7-zip=7.2.14-r0 \
         procps=3.3.15-r0 \
-        psmisc=23.1-r0 \
         sed=4.4-r2 \
         sudo=1.8.23-r2 \
+        psmisc=23.2-r1 \
         wget=1.20.1-r0 \
     \
     && addgroup -S pihole \
