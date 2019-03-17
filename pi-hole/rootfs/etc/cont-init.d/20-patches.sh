@@ -1,22 +1,19 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Pi-hole
 # Applies patches to Pi-hole
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 readonly base=/var/www/html/admin
 declare hostname
 
 hostname="hassio"
-if hass.api.supervisor.ping; then
-    hostname=$(hass.api.host.info.hostname)
-elif hass.file_exists '/data/hostname'; then
+if bashio::supervisor.ping; then
+    hostname=$(bashio::host.hostname)
+elif bashio::fs.file_exists '/data/hostname'; then
     hostname=$(</data/hostname)
 fi
 
-hass.log.debug 'Patching Pi-hole for use with Hass.io'
+bashio::log.debug 'Patching Pi-hole for use with Hass.io...'
 sed -i 's/Are you sure you want to send a poweroff command to your Pi-Hole\?/Are you sure you want to send a stop command to your Pi-Hole add-on\?/g' "${base}/scripts/pi-hole/js/settings.js"
 sed -i 's/Are you sure you want to send a reboot command to your Pi-Hole\?/Are you sure you want to send a restart command to your Pi-Hole add-on\?/g' "${base}/scripts/pi-hole/js/settings.js"
 sed -i 's/Designed For Raspberry Pi/Modified for Home Assistant/g' "${base}/scripts/pi-hole/php/header.php"

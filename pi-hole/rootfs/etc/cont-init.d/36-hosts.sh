@@ -1,17 +1,14 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Pi-hole
 # Adds custom configured hosts to the DNS resolver
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 declare name
 declare ip
 
-for host in $(hass.config.get 'hosts|keys[]'); do
-    name=$(hass.config.get "hosts[${host}].name")
-    ip=$(hass.config.get "hosts[${host}].ip")
-    hass.log.debug "Adding host: ${name} resolves to ${ip}"
+for host in $(bashio::config 'hosts|keys'); do
+    name=$(bashio::config "hosts[${host}].name")
+    ip=$(bashio::config "hosts[${host}].ip")
+    bashio::log.debug "Adding host: ${name} resolves to ${ip}"
     echo "${ip} ${name}" >> /etc/hosts.list
 done

@@ -1,16 +1,13 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Pi-hole
 # Runs Gravity on startup
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
-if hass.config.true 'update_lists_on_start' \
-    || ! hass.file_exists "/data/pihole/gravity.list";
+if bashio::config.true 'update_lists_on_start' \
+    || ! bashio::fs.file_exists "/data/pihole/gravity.list";
 then
-    hass.log.debug 'Generating block lists'
-    pihole-FTL &
+    bashio::log.debug 'Generating block lists'
+    s6-setuidgid pihole pihole-FTL &
     sleep 2
     gravity.sh
     kill -9 "$(pgrep pihole-FTL)" || true

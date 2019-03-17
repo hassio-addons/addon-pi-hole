@@ -1,55 +1,52 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Pi-hole
 # Links files to more permanent storage locations and configures dnsmasq
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 declare interface
 declare port
 
 # Allow dnsmasq to bind on ports < 1024
 setcap CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_NET_RAW=+eip "$(command -v pihole-FTL)"
 
-if ! hass.directory_exists '/data/dnsmasq.d'; then
-    hass.log.debug 'Initializing dnsmasq configuration on persistent storage'
+if ! bashio::fs.directory_exists '/data/dnsmasq.d'; then
+    bashio::log.debug 'Initializing dnsmasq configuration on persistent storage'
     mkdir -p /data/dnsmasq.d
     cp -R /etc/dnsmasq.d/* /data/dnsmasq.d
 fi
 
-hass.log.debug 'Symlinking configuration'
+bashio::log.debug 'Symlinking configuration'
 rm -fr /etc/dnsmasq.d
 ln -s /data/dnsmasq.d /etc/dnsmasq.d
 
-hass.log.debug 'Setting dnsmasq interface'
-if hass.config.has_value 'interface'; then
-    hass.log.debug 'Using interface set in configuration'
-    interface=$(hass.config.get 'interface')
+bashio::log.debug 'Setting dnsmasq interface'
+if bashio::config.has_value 'interface'; then
+    bashio::log.debug 'Using interface set in configuration'
+    interface=$(bashio::config 'interface')
 else
-    hass.log.debug 'Detecting interface'
+    bashio::log.debug 'Detecting interface'
     interface=$(awk '{for (i=1; i<=NF; i++) if ($i~/dev/) print $(i+1)}' <<< "$(ip route get 8.8.8.8)")
 fi
-hass.log.debug "Setting interface to: ${interface}"
+bashio::log.debug "Setting interface to: ${interface}"
 sed -i "s/interface=.*/interface=${interface}/" /etc/dnsmasq.d/01-pihole.conf
 sed -i "/except-interface/d" /etc/dnsmasq.d/01-pihole.conf
 
-hass.log.debug "Ensure extra information for query log is enabled"
+bashio::log.debug "Ensure extra information for query log is enabled"
 sed -i "s/log-queri.*/log-queries=extra/" /etc/dnsmasq.d/01-pihole.conf
 
-hass.log.debug 'Setting dnsmasq port'
-port=$(hass.config.get 'dns_port')
+bashio::log.debug 'Setting dnsmasq port'
+port=$(bashio::config 'dns_port')
 
-hass.log.debug "Setting dnsmasq port to: ${port}"
+bashio::log.debug "Setting dnsmasq port to: ${port}"
 sed -i "s/port=.*/port=${port}/" /etc/dnsmasq.d/99-addon.conf
 
-if ! hass.directory_exists '/var/run/pihole'; then
+if ! bashio::fs.directory_exists '/var/run/pihole'; then
     mkdir -p /var/run/pihole
     chmod 775 /var/run/pihole
     chown pihole /var/run/pihole
 fi
 
-if ! hass.file_exists '/var/run/pihole-FTL.port'; then
+if ! bashio::fs.file_exists '/var/run/pihole-FTL.port'; then
     touch /var/run/pihole-FTL.port
     chmod 644 /var/run/pihole-FTL.port
     chown pihole:root /var/run/pihole-FTL.port

@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bashio
 # ==============================================================================
 # Community Hass.io Add-ons: Pi-hole
 # Restarts the add-on
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
 
 echo "Restarting add-on in 15 seconds"
 
 sleep 15
 
-hass.addon.restart
+bashio::addon.restart
