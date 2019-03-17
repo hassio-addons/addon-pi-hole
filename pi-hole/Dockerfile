@@ -29,8 +29,8 @@ RUN \
         bash=4.4.19-r1 \
         bc=1.07.1-r0 \
         bind-tools=9.12.3-r0 \
-        git=2.18.1-r0 \
         coreutils=8.30-r0 \
+        git=2.20.1-r0 \
         grep=3.1-r2 \
         libcap=2.25-r1 \
         libxml2=2.9.8-r1 \
