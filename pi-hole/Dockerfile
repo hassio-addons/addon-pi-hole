@@ -28,7 +28,7 @@ RUN \
     && apk add --no-cache \
         bash=4.4.19-r1 \
         bc=1.07.1-r0 \
-        bind-tools=9.12.3-r0 \
+        bind-tools=9.12.4_p1-r1 \
         coreutils=8.30-r0 \
         git=2.20.1-r0 \
         grep=3.1-r2 \
