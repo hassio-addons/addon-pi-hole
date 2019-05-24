@@ -36,7 +36,7 @@ RUN \
         libxml2=2.9.9-r1 \
         logrotate=3.15.0-r0 \
         ncurses=6.1_p20190105-r0 \
-        nginx=1.14.2-r0 \
+        nginx=1.14.2-r1 \
         openssl=1.1.1b-r1 \
         perl=5.26.3-r0 \
         php7-fileinfo=7.2.14-r0 \
