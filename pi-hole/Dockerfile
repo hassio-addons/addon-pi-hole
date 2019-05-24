@@ -53,7 +53,7 @@ RUN \
         psmisc=23.2-r1 \
         sed=4.5-r0 \
         sudo=1.8.25_p1-r2 \
-        wget=1.20.1-r0 \
+        wget=1.20.3-r0 \
     \
     && addgroup -S pihole \
     && adduser -S -s /sbin/nologin pihole pihole \
