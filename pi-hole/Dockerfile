@@ -26,13 +26,13 @@ RUN \
         build-base=0.5-r1 \
     \
     && apk add --no-cache \
-        libxml2=2.9.9-r1 \
         bc=1.07.1-r1 \
         bind-tools=9.14.3-r0 \
         coreutils=8.31-r0 \
         git=2.22.0-r0 \
         grep=3.3-r0 \
         libcap=2.27-r0 \
+        libxml2=2.9.9-r2 \
         logrotate=3.15.0-r0 \
         ncurses=6.1_p20190105-r0 \
         nginx=1.14.2-r1 \
