@@ -34,10 +34,10 @@ RUN \
         libcap=2.27-r0 \
         libxml2=2.9.9-r2 \
         logrotate=3.15.0-r0 \
-        nginx=1.14.2-r1 \
         openssl=1.1.1b-r1 \
         perl=5.26.3-r0 \
         ncurses=6.1_p20190518-r0 \
+        nginx=1.16.0-r2 \
         php7-fileinfo=7.3.6-r0 \
         php7-fpm=7.3.6-r0 \
         php7-json=7.3.6-r0 \
