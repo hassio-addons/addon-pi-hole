@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV PATH="${PATH}:/opt/pihole" \
-    CORE_TAG="v4.3" \
+    CORE_TAG="v4.3.1" \
     WEB_TAG="v4.3" \
     FTL_TAG="v4.3"
 
