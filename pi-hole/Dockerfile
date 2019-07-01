@@ -26,7 +26,6 @@ RUN \
         build-base=0.5-r1 \
     \
     && apk add --no-cache \
-        bash=4.4.19-r1 \
         bc=1.07.1-r0 \
         bind-tools=9.12.4_p1-r1 \
         coreutils=8.30-r0 \
