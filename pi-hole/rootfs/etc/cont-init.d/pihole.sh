@@ -11,6 +11,12 @@ declare ip_ula
 declare ips
 declare result
 declare virtual_host
+declare port
+declare name
+declare hassio_dns
+
+# Allow dnsmasq to bind on ports < 1024
+setcap CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_NET_RAW=+eip "$(command -v pihole-FTL)"
 
 if ! bashio::fs.file_exists "${SETUP_VARS}"; then
     bashio::log.debug 'Initializing Pi-hole configuration on persistent storage'
@@ -18,14 +24,20 @@ if ! bashio::fs.file_exists "${SETUP_VARS}"; then
     cp /etc/pihole/* /data/pihole
 fi
 
-# Copy "possible" missing files, due to upgrades
-if ! bashio::fs.file_exists '/data/pihole/localbranches'; then
-    cp /etc/pihole/localbranches /data/pihole
+if ! bashio::fs.directory_exists '/data/dnsmasq.d'; then
+    bashio::log.debug 'Initializing dnsmasq configuration on persistent storage'
+    mkdir -p /data/dnsmasq.d
+    cp -R /etc/dnsmasq.d/* /data/dnsmasq.d
 fi
 
-if ! bashio::fs.file_exists '/data/pihole/GitHubVersions'; then
-    cp /etc/pihole/GitHubVersions /data/pihole
-fi
+bashio::log.debug 'Setting up list of known DNS servers'
+hassio_dns=$(bashio::dns.host)
+cp /etc/pihole/dns-servers.conf /data/pihole/dns-servers.conf
+sed -i "s/%%hassio_dns%%/${hassio_dns}/g" /etc/pihole/dns-servers.conf
+
+bashio::log.debug 'Symlinking configuration'
+rm -fr /etc/dnsmasq.d
+ln -s /data/dnsmasq.d /etc/dnsmasq.d
 
 bashio::log.debug 'Symlinking configuration'
 rm -fr /etc/pihole
@@ -42,6 +54,8 @@ else
 fi
 bashio::log.debug "Setting interface to: ${interface}"
 sed -i "s/PIHOLE_INTERFACE.*/PIHOLE_INTERFACE=${interface}/" "${SETUP_VARS}"
+sed -i "s/interface=.*/interface=${interface}/" /etc/dnsmasq.d/01-pihole.conf
+sed -i "/except-interface/d" /etc/dnsmasq.d/01-pihole.conf
 
 bashio::log.debug 'Setting Pi-hole IPv4 address'
 if bashio::config.has_value 'ipv4_address'; then
@@ -140,3 +154,67 @@ fi
 
 # Write current version information
 echo -n "${CORE_TAG} ${WEB_TAG} ${FTL_TAG}" > /etc/pihole/localversions
+
+bashio::log.debug "Ensure extra information for query log is enabled"
+sed -i "s/log-queri.*/log-queries=extra/" /etc/dnsmasq.d/01-pihole.conf
+
+bashio::log.debug 'Setting dnsmasq port'
+port=$(bashio::addon.port "53/udp")
+
+bashio::log.debug "Setting dnsmasq port to: ${port}"
+sed -i "s/port=.*/port=${port}/" /etc/dnsmasq.d/99-addon.conf
+
+if ! bashio::fs.directory_exists '/var/run/pihole'; then
+    mkdir -p /var/run/pihole
+    chmod 775 /var/run/pihole
+    chown pihole /var/run/pihole
+fi
+
+if ! bashio::fs.file_exists '/var/run/pihole-FTL.port'; then
+    touch /var/run/pihole-FTL.port
+    chmod 644 /var/run/pihole-FTL.port
+    chown pihole:root /var/run/pihole-FTL.port
+fi
+
+if bashio::supervisor.ping; then
+    bashio::host.hostname > /data/hostname
+fi
+
+# Add pi.hole to hosts
+echo "127.0.0.1 pi.hole" >> /etc/hosts
+
+mkdir -p /data/log
+if ! bashio::fs.file_exists '/data/log/pihole.log'; then
+    touch /data/log/pihole.log
+    chmod 644 /data/log/pihole.log
+    chown pihole:root /data/log/pihole.log
+fi
+
+ln -sf /data/log/pihole.log /var/log/pihole.log
+if ! bashio::fs.file_exists '/data/log/pihole-FTL.log'; then
+    touch /data/log/pihole-FTL.log
+    chmod 644 /data/log/pihole-FTL.log
+    chown pihole:root /data/log/pihole-FTL.log
+fi
+
+ln -sf /data/log/pihole-FTL.log /var/log/pihole-FTL.log
+
+for host in $(bashio::config 'hosts|keys'); do
+    name=$(bashio::config "hosts[${host}].name")
+    ip=$(bashio::config "hosts[${host}].ip")
+    bashio::log.debug "Adding host: ${name} resolves to ${ip}"
+    echo "${ip} ${name}" >> /etc/hosts.list
+done
+
+# We use HA Auth now, disable Pi-Hole password
+pihole -a -p ""
+
+if bashio::config.true 'update_lists_on_start' \
+    || ! bashio::fs.file_exists "/data/pihole/gravity.list";
+then
+    bashio::log.debug 'Generating block lists'
+    s6-setuidgid pihole pihole-FTL &
+    sleep 2
+    gravity.sh
+    kill -9 "$(pgrep pihole-FTL)" || true
+fi

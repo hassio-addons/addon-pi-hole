@@ -3,7 +3,10 @@
 # Community Hass.io Add-ons: Pi-hole
 # Runs the Nginx daemon
 # ==============================================================================
-# Wait for PHP-FPM to become available
-s6-svwait -u -t 5000 /var/run/s6/services/php-fpm
 
-exec nginx -g "daemon off;"
+# Wait for PHP-FPM to become available
+bashio::net.wait_for 17276
+
+bashio::log.info "Starting NGinx...."
+
+exec nginx

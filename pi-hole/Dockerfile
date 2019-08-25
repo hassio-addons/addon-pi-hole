@@ -34,7 +34,9 @@ RUN \
         libcap=2.27-r0 \
         libxml2=2.9.9-r2 \
         logrotate=3.15.0-r0 \
+        lua-resty-http=0.13-r0 \
         ncurses=6.1_p20190518-r0 \
+        nginx-mod-http-lua=1.16.1-r0 \
         nginx=1.16.1-r0 \
         openssl=1.1.1c-r0 \
         perl=5.28.2-r1 \
@@ -51,6 +53,7 @@ RUN \
         procps=3.3.15-r0 \
         psmisc=23.2-r1 \
         sed=4.7-r0 \
+        sqlite=3.28.0-r0 \
         sudo=1.8.27-r0 \
         wget=1.20.3-r0 \
     \
@@ -86,8 +89,10 @@ RUN \
     && patch -p1 < /patches/pihole/fix-killall-brain-damage.patch \
     && install -o pihole -Dm755 -t "/usr/local/bin" /etc/.pihole/pihole \
     \
-    && rm -f -r /root/FTL \
-    && apk del --purge .build-dependencies
+    && apk del --purge .build-dependencies \
+    && rm -fr \
+        /etc/nginx \
+        /root/FTL
 
 # Copy root filesystem
 COPY rootfs /

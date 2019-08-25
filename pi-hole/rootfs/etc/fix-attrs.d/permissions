@@ -1,0 +1,11 @@
+/data/log/pihole-FTL.log false pihole:root 0644 0755
+/data/log/pihole.log false pihole:root 0644 0755
+/data/pihole/dhcp.leases false pihole:root 0644 0755
+/data/pihole/pihole-FTL.db false pihole:root 0644 0755
+/etc/logrotate.d/pihole false root 0644 0644
+/etc/resolv.conf false doesntexist,0:1000 0664 0664
+/etc/sudoers.d true root 0640 0750
+/usr/bin/pihole-FTL false root 0755 0755
+/var/log/nginx true nginx 0755 0644
+/var/run/pihole true pihole:root 0644 0755
+/var/www/html false nginx 0755 0755

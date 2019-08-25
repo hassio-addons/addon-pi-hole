@@ -6,6 +6,8 @@
 mkdir -p /var/run/pihole
 chown pihole:pihole /var/run/pihole
 
+bashio::log.info "Starting Pi-Hole FTL..."
+
 if bashio::debug; then
     exec s6-setuidgid pihole pihole-FTL debug
 else
