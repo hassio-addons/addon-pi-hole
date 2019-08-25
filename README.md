@@ -38,9 +38,7 @@ Alpine Linux and is using Docker.
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-**NOTE**: Your Hass.io machine MUST HAVE a static IP for this add-on to function
-properly/fully.
-
+1. **Ensure your Hass.io device has a [static IP and static external DNS servers!](https://github.com/home-assistant/hassos/blob/dev/Documentation/network.md#static-ip)**
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install the "Pi-hole" add-on
 1. Start the "Pi-hole" add-on
@@ -58,10 +56,7 @@ Example add-on configuration:
 ```json
 {
   "log_level": "info",
-  "password": "changeme",
   "update_lists_on_start": true,
-  "admin_port": 4865,
-  "dns_port": 53,
   "ssl": false,
   "certfile": "fullchain.pem",
   "keyfile": "privkey.pem",
@@ -110,15 +105,6 @@ you are troubleshooting.
 Using `trace` or `debug` log levels puts the dnsmasq daemon into debug mode,
 allowing you to see all DNS requests in the add-on log.
 
-### Option: `password`
-
-Sets the password to authenticate with the Pi-hole web interface.
-
-**Note**: _Be aware! Even when you have set a password, some statistics are
-still visible / available._
-
-**Note**: _This option support secrets, e.g., `!secret pihole_password`._
-
 ### Option: `update_lists_on_start`
 
 Download and process all configured ad block lists on add-on startup by setting
@@ -130,15 +116,6 @@ while. A scheduled task will take care of that.
 
 **Note**: _When starting the add-on for the very first time, the lists will be
 updated, regardless of the value of this option._
-
-### Option: `admin_port`
-
-Changes the port on which the Pi-hole web interface will be served from.
-
-### Option: `dns_port`
-
-Allows you to change the DNS port. `53` is the default port for DNS. Unless you
-have a good reason to change it, leave it to `53`.
 
 ### Option: `ssl`
 
@@ -209,14 +186,6 @@ be a short style hostname like: `printer` or a longer one `printer.local`.
 The IP address this specified host must point to. Its value must be an IPv6 or
 IPv4 IP address.
 
-### Option: `i_like_to_be_pwned`
-
-Adding this option to the add-on configuration allows to you bypass the
-HaveIBeenPwned password requirement by setting it to `true`.
-
-**Note**: _We STRONGLY suggest picking a stronger/safer password instead of
-using this option! USE AT YOUR OWN RISK!_
-
 ### Option: `leave_front_door_open`
 
 Adding this option to the add-on configuration allows you to disable
@@ -225,23 +194,6 @@ password empty.
 
 **Note**: _We STRONGLY suggest, not to use this, even if this add-on is
 only exposed to your internal network. USE AT YOUR OWN RISK!_
-
-## Embedding into Home Assistant
-
-It is possible to embed the Pi-hole admin directly into Home Assistant, allowing
-you to access your Pi-hole admin through the Home Assistant frontend.
-
-Home Assistant provides the `panel_iframe` component, for these purposes.
-
-Example configuration:
-
-```yaml
-panel_iframe:
-  pihole:
-    title: Pi-hole
-    icon: mdi:block-helper
-    url: http://addres.to.your.hass.io:4865
-```
 
 ## Using the Pi-hole sensor in Home Assistant
 
