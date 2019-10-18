@@ -10,7 +10,6 @@ declare ip_gua
 declare ip_ula
 declare ips
 declare result
-declare virtual_host
 declare port
 declare name
 declare hassio_dns
@@ -137,12 +136,6 @@ if bashio::config.true 'ipv6'; then
 else
     bashio::log.debug 'Disabling IPv6'
     sed -i "s/IPV6_ADDRESS.*/IPV6_ADDRESS=/" "${SETUP_VARS}"
-fi
-
-if bashio::config.has_value 'virtual_host'; then
-    bashio::log.debug 'Storing virtual host for Pi-hole'
-    virtual_host="$(bashio::config 'virtual_host')"
-    echo "${virtual_host}" | tr -d '[:space:]' > /var/run/s6/container_environment/VIRTUAL_HOST
 fi
 
 bashio::log.debug 'Setting Pi-hole Query Logging state'

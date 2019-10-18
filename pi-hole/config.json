@@ -47,7 +47,6 @@
     "ipv6": true,
     "ipv4_address": "",
     "ipv6_address": "",
-    "virtual_host": "",
     "hosts": []
   },
   "schema": {
@@ -60,7 +59,7 @@
     "ipv6": "bool",
     "ipv4_address": "str",
     "ipv6_address": "str",
-    "virtual_host": "str",
+
     "hosts": [
       {
         "name": "str",

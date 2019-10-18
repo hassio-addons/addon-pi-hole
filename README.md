@@ -64,7 +64,6 @@ Example add-on configuration:
   "ipv6": true,
   "ipv4_address": "",
   "ipv6_address": "",
-  "virtual_host": "homeassistant.example.com",
   "hosts": [
     {
       "name": "printer.local",
@@ -158,12 +157,6 @@ Manually set the IPv6 address for Pi-hole to use. By leaving it empty, the
 add-on will try to auto-detect the interface to use.
 
 **Note**: _This option is in place in case auto-detection fails on your setup._
-
-### Option: `virtual_host`
-
-In case you have an alternative hostname to access Pi-hole (e.g., DuckDNS), you
-can specify it in this option. This improves the handling of the Pi-hole
-blocked website & admin web interface pages.
 
 ### Option: `hosts`
 
