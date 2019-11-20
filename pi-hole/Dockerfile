@@ -36,8 +36,8 @@ RUN \
         logrotate=3.15.0-r0 \
         lua-resty-http=0.13-r0 \
         ncurses=6.1_p20190518-r0 \
-        nginx-mod-http-lua=1.16.1-r0 \
-        nginx=1.16.1-r0 \
+        nginx-mod-http-lua=1.16.1-r1 \
+        nginx=1.16.1-r1 \
         openssl=1.1.1c-r0 \
         perl=5.28.2-r1 \
         php7-fileinfo=7.3.8-r0 \
