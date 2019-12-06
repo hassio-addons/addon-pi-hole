@@ -186,8 +186,8 @@ only exposed to your internal network. USE AT YOUR OWN RISK!_
 
 ## Using the Pi-hole integration in Home Assistant
 
-Home Assistant offers a [Pi-hole integration][pi-hole-integration] that allows you to
-retrieve statistics and interact with your Pi-hole installation.
+Home Assistant offers a [Pi-hole integration][pi-hole-integration] that allows
+you to retrieve statistics and interact with your Pi-hole installation.
 
 To enable this integration, add the following lines to your `configuration.yaml`
 file:
