@@ -188,27 +188,22 @@ password empty.
 **Note**: _We STRONGLY suggest, not to use this, even if this add-on is
 only exposed to your internal network. USE AT YOUR OWN RISK!_
 
-## Using the Pi-hole sensor in Home Assistant
+## Using the Pi-hole integration in Home Assistant
 
-Home Assistant offers a [Pi-hole sensor][pi-hole-sensor] that allows you to
-display the statistical summary of your Pi-hole installation.
+Home Assistant offers a [Pi-hole integration][pi-hole-integration] that allows you to
+retrieve statistics and interact with your Pi-hole installation.
 
-To enable this sensor, add the following lines to your `configuration.yaml`
+To enable this integration, add the following lines to your `configuration.yaml`
 file:
 
 ```yaml
 # Example configuration.yaml entry
-sensor:
-  - platform: pi_hole
-    host: localhost:4865
-    monitored_conditions:
-      - ads_blocked_today
-      - dns_queries_today
-      - unique_clients
+pi_hole:
+  host: localhost:4865
 ```
 
 For more information and documentation about configuring this sensor, please
-check the [documentation of Home Assistant][pi-hole-sensor].
+check the [documentation of Home Assistant][pi-hole-integration].
 
 ## Changelog & Releases
 
@@ -322,7 +317,7 @@ SOFTWARE.
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2019.svg
 [patreon-shield]: https://www.frenck.nl/images/patreon.png
 [patreon]: https://www.patreon.com/frenck
-[pi-hole-sensor]: https://home-assistant.io/components/sensor.pi_hole/
+[pi-hole-integration]: https://www.home-assistant.io/components/pi_hole/
 [pi-hole]: https://pi-hole.net/
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
