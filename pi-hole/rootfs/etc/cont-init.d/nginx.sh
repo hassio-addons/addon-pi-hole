@@ -9,6 +9,7 @@ declare certfile
 declare hassio_dns
 declare ingress_interface
 declare ingress_port
+declare ingress_url
 declare keyfile
 
 admin_port=$(bashio::addon.port 80)
@@ -32,8 +33,10 @@ fi
 
 ingress_port=$(bashio::addon.ingress_port)
 ingress_interface=$(bashio::addon.ip_address)
+ingress_url=$(bashio::addon.ingress_url)
 sed -i "s/%%port%%/${ingress_port}/g" /etc/nginx/servers/ingress.conf
 sed -i "s/%%interface%%/${ingress_interface}/g" /etc/nginx/servers/ingress.conf
+sed -i "s#%%url%%#${ingress_url}#g" /etc/nginx/servers/ingress.conf
 
 api_port=$(bashio::addon.port 4865)
 if bashio::var.has_value "${api_port}"; then
