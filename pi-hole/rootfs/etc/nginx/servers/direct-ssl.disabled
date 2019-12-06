@@ -12,6 +12,11 @@ server {
 
     access_by_lua_file /etc/nginx/lua/ha-auth.lua;
 
+    proxy_set_header Accept-Encoding "";
+    sub_filter '/admin/queries.php?' '/queries.php?';
+    sub_filter_types application/javascript;
+    sub_filter_once off;
+
     location ~ .php$ {
         fastcgi_pass 127.0.0.1:17276;
         fastcgi_read_timeout 900;
