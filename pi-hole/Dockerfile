@@ -22,7 +22,7 @@ RUN \
         musl-dev=1.1.24-r0 \
         libexecinfo-dev=1.1-r1 \
         linux-headers=4.19.36-r0 \
-        nettle-dev=3.4.1-r1 \
+        nettle-dev=3.5.1-r0 \
         build-base=0.5-r1 \
     \
     && apk add --no-cache \
