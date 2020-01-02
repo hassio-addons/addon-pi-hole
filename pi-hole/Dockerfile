@@ -34,7 +34,7 @@ RUN \
         libcap=2.27-r0 \
         libxml2=2.9.10-r1 \
         logrotate=3.15.1-r0 \
-        lua-resty-http=0.13-r0 \
+        lua-resty-http=0.15-r0 \
         ncurses=6.1_p20190518-r0 \
         nginx-mod-http-lua=1.16.1-r4 \
         nginx=1.16.1-r4 \
