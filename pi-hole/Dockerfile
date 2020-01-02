@@ -19,7 +19,7 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         gcc=9.2.0-r3 \
         make=4.2.1-r2 \
-        musl-dev=1.1.22-r3 \
+        musl-dev=1.1.24-r0 \
         libexecinfo-dev=1.1-r1 \
         linux-headers=4.19.36-r0 \
         nettle-dev=3.4.1-r1 \
