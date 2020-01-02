@@ -29,7 +29,7 @@ RUN \
         bc=1.07.1-r1 \
         bind-tools=9.14.8-r5 \
         coreutils=8.31-r0 \
-        git=2.22.0-r0 \
+        git=2.24.1-r0 \
         grep=3.3-r0 \
         libcap=2.27-r0 \
         libxml2=2.9.10-r1 \
