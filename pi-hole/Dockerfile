@@ -38,7 +38,7 @@ RUN \
         ncurses=6.1_p20190518-r0 \
         nginx-mod-http-lua=1.16.1-r1 \
         nginx=1.16.1-r1 \
-        openssl=1.1.1d-r0 \
+        openssl=1.1.1d-r3 \
         perl=5.28.2-r1 \
         php7-fileinfo=7.3.13-r0 \
         php7-fpm=7.3.13-r0 \
