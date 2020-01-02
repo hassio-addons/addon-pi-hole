@@ -17,7 +17,7 @@ COPY rootfs/patches /patches
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        gcc=8.3.0-r0 \
+        gcc=9.2.0-r3 \
         make=4.2.1-r2 \
         musl-dev=1.1.22-r3 \
         libexecinfo-dev=1.1-r1 \
