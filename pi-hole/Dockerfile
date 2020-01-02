@@ -53,7 +53,7 @@ RUN \
         procps=3.3.15-r0 \
         psmisc=23.2-r1 \
         sed=4.7-r0 \
-        sqlite=3.28.0-r1 \
+        sqlite=3.30.1-r1 \
         sudo=1.8.27-r0 \
         wget=1.20.3-r0 \
     \
