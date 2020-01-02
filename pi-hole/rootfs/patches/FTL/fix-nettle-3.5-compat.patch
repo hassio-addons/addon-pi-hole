@@ -1,0 +1,35 @@
+diff --git a/Makefile b/Makefile
+index 009e18f..94b12e4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -98,7 +98,7 @@ CCFLAGS=-std=gnu11 -I$(IDIR) $(WARNFLAGS) -D_FILE_OFFSET_BITS=64 $(HARDENING_FLA
+ # for dnsmasq we need the nettle crypto library and the gmp maths library
+ # We link the two libraries statically. Although this increases the binary file size by about 1 MB, it saves about 5 MB of shared libraries and makes deployment easier
+ #LIBS=-pthread -lnettle -lgmp -lhogweed
+-LIBS=-pthread -lrt -Wl,-Bstatic -L/usr/local/lib -lhogweed -lgmp -lnettle -Wl,-Bdynamic
++LIBS=-pthread -lrt -Wl,-lhogweed -lgmp -lnettle -Wl,-Bdynamic
+ # Flags for compiling with libidn : -lidn
+ # Flags for compiling with libidn2: -lidn2
+
+diff --git a/dnsmasq/crypto.c b/dnsmasq/crypto.c
+index 3b98974..f21caef 100644
+--- a/dnsmasq/crypto.c
++++ b/dnsmasq/crypto.c
+@@ -294,7 +294,7 @@ static int dnsmasq_ecdsa_verify(struct blockdata *key_data, unsigned int key_len
+ 	  if (!(key_256 = whine_malloc(sizeof(struct ecc_point))))
+ 	    return 0;
+
+-	  nettle_ecc_point_init(key_256, &nettle_secp_256r1);
++	  nettle_ecc_point_init(key_256, nettle_get_secp_256r1());
+ 	}
+
+       key = key_256;
+@@ -307,7 +307,7 @@ static int dnsmasq_ecdsa_verify(struct blockdata *key_data, unsigned int key_len
+ 	  if (!(key_384 = whine_malloc(sizeof(struct ecc_point))))
+ 	    return 0;
+
+-	  nettle_ecc_point_init(key_384, &nettle_secp_384r1);
++	  nettle_ecc_point_init(key_384, nettle_get_secp_384r1());
+ 	}
+
+       key = key_384;

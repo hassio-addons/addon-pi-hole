@@ -36,6 +36,7 @@ RUN \
         logrotate=3.15.1-r0 \
         lua-resty-http=0.15-r0 \
         ncurses=6.1_p20191130-r0 \
+        nettle=3.5.1-r0 \
         nginx-mod-http-lua=1.16.1-r4 \
         nginx=1.16.1-r4 \
         openssl=1.1.1d-r3 \
@@ -74,6 +75,7 @@ RUN \
     && git -C /root/FTL checkout -b master \
     \
     && cd /root/FTL \
+    && patch -p1 < /patches/FTL/fix-nettle-3.5-compat.patch \
     && patch -p1 < /patches/FTL/fix-poll-h-include-warning-on-musl.patch \
     && patch -p1 < /patches/FTL/no-backtrace-on-musl.patch \
     && make \
