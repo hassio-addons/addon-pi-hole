@@ -39,7 +39,7 @@ RUN \
         nginx-mod-http-lua=1.16.1-r4 \
         nginx=1.16.1-r4 \
         openssl=1.1.1d-r3 \
-        perl=5.28.2-r1 \
+        perl=5.30.1-r0 \
         php7-fileinfo=7.3.13-r0 \
         php7-fpm=7.3.13-r0 \
         php7-json=7.3.13-r0 \
