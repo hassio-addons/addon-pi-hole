@@ -196,6 +196,7 @@ file:
 # Example configuration.yaml entry
 pi_hole:
   host: localhost:4865
+  api_key: ""
 ```
 
 For more information and documentation about configuring this sensor, please
