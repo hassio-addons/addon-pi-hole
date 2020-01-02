@@ -51,7 +51,7 @@ RUN \
         php7-sqlite3=7.3.13-r0 \
         php7-zip=7.3.13-r0 \
         procps=3.3.15-r0 \
-        psmisc=23.2-r1 \
+        psmisc=23.3-r0 \
         sed=4.7-r0 \
         sqlite=3.30.1-r1 \
         sudo=1.8.29-r0 \
