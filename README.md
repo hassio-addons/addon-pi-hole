@@ -49,32 +49,23 @@ comparison to installing any other Hass.io add-on.
 
 Example add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "update_lists_on_start": true,
-  "ssl": false,
-  "certfile": "fullchain.pem",
-  "keyfile": "privkey.pem",
-  "interface": "eth0",
-  "ipv6": true,
-  "ipv4_address": "",
-  "ipv6_address": "",
-  "hosts": [
-    {
-      "name": "printer.local",
-      "ip": "192.168.1.5"
-    },
-    {
-      "name": "router.local",
-      "ip": "192.168.1.1"
-    },
-    {
-      "name": "router.local",
-      "ip": "FE80:0000:0000:0000:0202:B3FF:FE1E:8329"
-    }
-  ]
-}
+```yaml
+log_level: info
+update_lists_on_start: true
+ssl: false
+certfile: fullchain.pem
+keyfile: privkey.pem
+interface: eth0
+ipv6: true
+ipv4_address: ''
+ipv6_address: ''
+hosts:
+  - name: printer.local
+    ip: 192.168.1.5
+  - name: router.local
+    ip: 192.168.1.1
+  - name: router.local
+    ip: "FE80:0000:0000:0000:0202:B3FF:FE1E:8329"
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
