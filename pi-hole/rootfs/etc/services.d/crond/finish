@@ -1,6 +1,6 @@
 #!/usr/bin/execlineb -S0
 # ==============================================================================
-# Community Hass.io Add-ons: Pi-hole
+# Home Assistant Community Add-on: Pi-hole
 # Take down the S6 supervision tree when crond fails
 # ==============================================================================
 if -n { s6-test $# -ne 0 }

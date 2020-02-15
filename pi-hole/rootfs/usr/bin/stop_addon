@@ -1,6 +1,6 @@
 #!/usr/bin/env bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Pi-hole
+# Home Assistant Community Add-on: Pi-hole
 # Stops the add-on
 # ==============================================================================
 echo "Stopping add-on in 15 seconds"

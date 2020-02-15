@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Pi-hole
+# Home Assistant Community Add-on: Pi-hole
 # Persists the Pi-hole configuration and configures it
 # ==============================================================================
 readonly SETUP_VARS='/data/pihole/setupVars.conf'

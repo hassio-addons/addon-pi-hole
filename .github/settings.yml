@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "Pi-hole - Community Hass.io Add-on for Home Assistant"
+  description: "Pi-hole - Home Assistant Community Add-ons"
   homepage: https://addons.community
-  topics: pihole, pi-hole, adblock, adblocker, hassio-addons, hassio, hass, home-assistant, homeassistant
+  topics: pihole, pi-hole, adblock, adblocker, addon, addons, home-assistant, homeassistant
   private: false
   has_issues: true
   has_projects: false

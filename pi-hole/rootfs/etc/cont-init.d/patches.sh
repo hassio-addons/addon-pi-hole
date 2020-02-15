@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: Pi-hole
+# Home Assistant Community Add-on: Pi-hole
 # Applies patches to Pi-hole
 # ==============================================================================
 readonly base=/var/www/html/admin
