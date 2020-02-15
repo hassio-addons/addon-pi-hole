@@ -37,8 +37,8 @@ RUN \
         lua-resty-http=0.15-r0 \
         ncurses=6.1_p20191130-r0 \
         nettle=3.5.1-r0 \
-        nginx-mod-http-lua=1.16.1-r4 \
-        nginx=1.16.1-r4 \
+        nginx-mod-http-lua=1.16.1-r6 \
+        nginx=1.16.1-r6 \
         openssl=1.1.1d-r3 \
         perl=5.30.1-r0 \
         php7-fileinfo=7.3.13-r0 \
