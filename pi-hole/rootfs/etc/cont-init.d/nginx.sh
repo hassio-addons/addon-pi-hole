@@ -6,7 +6,7 @@
 declare api_port
 declare admin_port
 declare certfile
-declare hassio_dns
+declare dns_host
 declare ingress_interface
 declare ingress_port
 declare ingress_url
@@ -44,6 +44,6 @@ if bashio::var.has_value "${api_port}"; then
     sed -i "s/%%api_port%%/${api_port}/g" /etc/nginx/servers/api.conf
 fi
 
-hassio_dns=$(bashio::dns.host)
-sed -i "s/%%hassio_dns%%/${hassio_dns}/g" /etc/nginx/includes/resolver.conf
+dns_host=$(bashio::dns.host)
+sed -i "s/%%dns_host%%/${dns_host}/g" /etc/nginx/includes/resolver.conf
 

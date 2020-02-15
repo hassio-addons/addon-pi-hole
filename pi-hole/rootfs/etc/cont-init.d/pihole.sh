@@ -12,7 +12,7 @@ declare ips
 declare result
 declare port
 declare name
-declare hassio_dns
+declare dns_host
 
 # Allow dnsmasq to bind on ports < 1024
 setcap CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_NET_RAW=+eip "$(command -v pihole-FTL)"
@@ -30,9 +30,9 @@ if ! bashio::fs.directory_exists '/data/dnsmasq.d'; then
 fi
 
 bashio::log.debug 'Setting up list of known DNS servers'
-hassio_dns=$(bashio::dns.host)
+dns_host=$(bashio::dns.host)
 cp /etc/pihole/dns-servers.conf /data/pihole/dns-servers.conf
-sed -i "s/%%hassio_dns%%/${hassio_dns}/g" /etc/pihole/dns-servers.conf
+sed -i "s/%%dns_host%%/${dns_host}/g" /etc/pihole/dns-servers.conf
 
 bashio::log.debug 'Symlinking configuration'
 rm -fr /etc/dnsmasq.d
