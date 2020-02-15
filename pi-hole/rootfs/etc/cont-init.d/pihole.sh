@@ -32,7 +32,7 @@ fi
 bashio::log.debug 'Setting up list of known DNS servers'
 dns_host=$(bashio::dns.host)
 cp /etc/pihole/dns-servers.conf /data/pihole/dns-servers.conf
-sed -i "s/%%dns_host%%/${dns_host}/g" /etc/pihole/dns-servers.conf
+sed -i "s/%%dns_host%%/${dns_host}/g" /data/pihole/dns-servers.conf
 
 bashio::log.debug 'Symlinking configuration'
 rm -fr /etc/dnsmasq.d
