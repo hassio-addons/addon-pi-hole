@@ -4,6 +4,9 @@ server {
 
     root /var/www/html/;
 
+    allow   127.0.0.1;
+    deny all;
+
     location / {
         deny all;
     }
