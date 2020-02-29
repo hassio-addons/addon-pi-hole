@@ -32,7 +32,7 @@ RUN \
         git=2.24.1-r0 \
         grep=3.3-r0 \
         libcap=2.27-r0 \
-        libxml2=2.9.10-r1 \
+        libxml2=2.9.10-r2 \
         logrotate=3.15.1-r0 \
         lua-resty-http=0.15-r0 \
         ncurses=6.1_p20191130-r0 \
