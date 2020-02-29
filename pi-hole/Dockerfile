@@ -35,7 +35,7 @@ RUN \
         libxml2=2.9.10-r2 \
         logrotate=3.15.1-r0 \
         lua-resty-http=0.15-r0 \
-        ncurses=6.1_p20191130-r0 \
+        ncurses=6.1_p20200118-r2 \
         nettle=3.5.1-r0 \
         nginx-mod-http-lua=1.16.1-r6 \
         nginx=1.16.1-r6 \
