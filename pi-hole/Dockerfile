@@ -55,7 +55,7 @@ RUN \
         psmisc=23.3-r0 \
         sed=4.7-r0 \
         sqlite=3.30.1-r1 \
-        sudo=1.8.29-r0 \
+        sudo=1.8.31-r0 \
         wget=1.20.3-r0 \
     \
     && addgroup -S pihole \
