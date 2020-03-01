@@ -13,7 +13,7 @@ elif bashio::fs.file_exists '/data/hostname'; then
     hostname=$(</data/hostname)
 fi
 
-bashio::log.debug 'Patching Pi-hole for use with Hass.io...'
+bashio::log.debug 'Patching Pi-hole for use with Home Assistant...'
 sed -i 's/Are you sure you want to send a poweroff command to your Pi-Hole\?/Are you sure you want to send a stop command to your Pi-Hole add-on\?/g' "${base}/scripts/pi-hole/js/settings.js"
 sed -i 's/Are you sure you want to send a reboot command to your Pi-Hole\?/Are you sure you want to send a restart command to your Pi-Hole add-on\?/g' "${base}/scripts/pi-hole/js/settings.js"
 sed -i 's/Designed For Raspberry Pi/Modified for Home Assistant/g' "${base}/scripts/pi-hole/php/header.php"

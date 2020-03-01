@@ -21,7 +21,7 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-Network-wide ad blocking using your Hass.io instance
+Network-wide ad blocking
 
 ## About
 
@@ -30,15 +30,16 @@ on a dedicated Raspberry Pi connected to your home network. Pi-hole lets you
 block advertisements for every device that connects to your network without the
 need for any client-side software.
 
-This add-on is a port of Pi-hole to be able to run on Hass.io and is based on
-Alpine Linux and is using Docker.
+This add-on is a port of Pi-hole to be able to run on Home Assistant and is
+based on Alpine Linux and is using Docker.
 
 ## Installation
 
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Home Assistant add-on.
 
-1. **Ensure your Hass.io device has a [static IP and static external DNS servers!](https://github.com/home-assistant/hassos/blob/dev/Documentation/network.md#static-ip)**
+1. **Ensure your Home Assistant device has a
+   [static IP and static external DNS servers!](https://github.com/home-assistant/hassos/blob/dev/Documentation/network.md#static-ip)**
 1. Search for the "Pi-hole" add-on in the Supervisor add-on store
    and install it.
 1. Start the "Pi-hole" add-on
