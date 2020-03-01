@@ -108,12 +108,12 @@ ARG BUILD_VERSION
 # Labels
 LABEL \
     io.hass.name="Pi-hole" \
-    io.hass.description="Network-wide ad blocking using your Hass.io instance" \
+    io.hass.description="Network-wide ad blocking" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="Network-wide ad blocking using your Hass.io instance" \
+    org.label-schema.description="Network-wide ad blocking" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Pi-hole" \
     org.label-schema.schema-version="1.0" \
