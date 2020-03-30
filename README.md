@@ -23,6 +23,29 @@
 
 Network-wide ad blocking
 
+## Deprecation warning
+
+**This add-on is in a deprecated state!**
+
+The Pi-hole add-on is now deprecated and will no longer be supported, maintained
+and will not receive future updates or fixes.
+
+Pi-hole used to be a great solution to filter network traffic, but it has been
+a challenge to keep/get it in a working state as an add-on.
+
+Meanwhile, the AdGuard team published an alternative:
+[AdGuard Home](https://github.com/hassio-addons/addon-adguard-home).
+
+AdGuard Home as surpassed Pi-hole in terms of capabilities, features,
+and stability, and Home Assistant provides a good integration with AdGuard.
+Above all, the AdGuard Home team has been supportive in developing the add-on.
+
+For those reasons, it is no longer viable to keep maintaining the Pi-hole
+add-on, which has been problematic at best.
+
+We strongly recommend migrating to the AdGuard Home add-on, which is available
+in the add-on store.
+
 ## About
 
 [Pi-hole][pi-hole] is an advertising-aware DNS- and web server, meant to be run
@@ -309,7 +332,7 @@ SOFTWARE.
 [patreon]: https://www.patreon.com/frenck
 [pi-hole-integration]: https://www.home-assistant.io/components/pi_hole/
 [pi-hole]: https://pi-hole.net/
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-%20!%20DEPRECATED%20%20%20!-ff0000.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-pi-hole.svg
 [releases]: https://github.com/hassio-addons/addon-pi-hole/releases
