@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV PATH="${PATH}:/opt/pihole" \
     CORE_TAG="v4.4" \
-    WEB_TAG="v4.3.2" \
+    WEB_TAG="v4.3.3" \
     FTL_TAG="v4.3.1"
 
 # We need to copy in the patches need during build
